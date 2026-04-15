@@ -1,0 +1,44 @@
+
+# Introdução
+
+Este conteúdo digital tem origem no curso online *"Introdução aos Indicadores Sociais com o software R"*, de autoria do Prof. Ronaldo Baltar e da Prof.ª Cláudia Siqueira Baltar. Ele foi desenvolvido como uma atividade do Projeto de extensão "Indicadores sociais como subsídio para o monitoramento e avaliação das ações dos municípios paranaenses em direção à Agenda 2030", vinculado ao Observatório de Populações e Políticas Públicas (ObPPP) e ao projeto de Informática aplicada à Pesquisa Social (InfoSoc) da Universidade Estadual de Londrina (UEL).
+
+## Objetivo
+
+O nosso foco inicial é a instalação e os primeiros passos com o **R**, um software gratuito voltado para a análise de dados, e com o **RStudio**, um ambiente integrado de desenvolvimento (IDE) também gratuito. O RStudio oferece diversos recursos práticos para facilitar a escrita, a elaboração e a visualização dos códigos que você criará utilizando o R.
+
+## Preparando o Ambiente de Trabalho
+
+### Instalando o R
+
+Para realizar a instalação da linguagem R, você deve acessar o site do repositório padrão **CRAN** através do link abaixo:
+
+<https://cran.r-project.org>
+
+Ao acessar o site, localize o *link* da versão compatível com o seu sistema operacional (Windows, Linux ou MacOS). Baixe o arquivo de instalação mais recente e execute-o diretamente no seu computador.
+
+### Instalando o RStudio (Posit)
+
+O RStudio é distribuído em duas versões: *Desktop* (desenvolvida para uso local em computadores individuais) e *Server* (servidor). Ambas estão disponíveis sob licença comercial ou gratuita (*open source*) para Linux, Mac e Windows.
+
+Em novembro de 2022, o RStudio mudou sua marca para **Posit**, mas os procedimentos de uso e instalação continuam os mesmos. Lembre-se de duas regras fundamentais antes da instalação:
+1. O RStudio aceita apenas instalação em **computadores de 64-bit**.
+2. Você deve se certificar de que **o R já tenha sido instalado corretamente** antes de prosseguir com o RStudio.
+
+O arquivo de instalação da versão Desktop pode ser baixado no seguinte endereço:
+<https://posit.co/download/rstudio-desktop/>
+
+Se tiver dificuldades ao longo do processo, você pode acompanhar este [Tutorial Interativo de Instalação do R e RStudio](https://www.iorad.com/player/1815363/Como-instalar-o-R-e-o-RStudio).
+
+:::{.callout-note}
+## Sobre a Instalação do RTools (Apenas para Windows)
+
+Ao instalar alguns pacotes que utilizam recursos computacionais mais avançados (como o `ggplot2`), eles podem solicitar compilação, ou seja, conversão de linguagens como C/C++ ou Fortran. Nesses casos, o R pode alertar que existe uma versão em código fonte mais recente do que a versão binária pronta para instalação. 
+
+**Não há nenhum problema em ignorar essa mensagem** e continuar utilizando a versão binária disponível. 
+
+No entanto, se você deseja compilar códigos fontes no seu próprio computador e utiliza o sistema Windows, precisará instalar uma ferramenta de suporte chamada **RTools**. O RTools ocupa cerca de **1 GB de espaço no disco rígido** e pode ser baixado em: 
+<https://cran.r-project.org/bin/windows/Rtools/>
+:::
+
+```

@@ -1,0 +1,32 @@
+project:
+  type: book
+
+book:
+  title: "Métodos Computacionais para Indicadores Sociais e Políticas Públicas"
+  author: "Ronaldo Baltar"
+  date: "2026"
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    toc: true
+    number-sections: true
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+    toc: true
+    number-sections: true
+    colorlinks: true
+execute:
+  warning: false
+  message: false
+
+

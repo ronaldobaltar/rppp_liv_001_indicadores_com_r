@@ -1,6 +1,6 @@
 
 ---
-title: "Manual de Métodos Computacionais para Indicadores Sociais e Políticas Públicas"
+title: "Métodos Computacionais para Indicadores Sociais e Políticas Públicas"
 subtitle: "Capítulo 1: Fundamentos de Indicadores Sociais e o Ecossistema R"
 author: "Editor-Chefe de Ciência Social Computacional"
 format:
@@ -21,7 +21,7 @@ execute:
 
 A análise de dados em ciências sociais e a formulação de políticas públicas exigem métricas precisas e reprodutíveis. Este manual introduz o desenvolvimento e a análise de indicadores sociais como recursos fundamentais para o planejamento governamental e a atuação de organizações não governamentais. 
 
-O acompanhamento rigoroso das condições de vida da população ganha especial relevância no contexto da **Agenda 2030** e dos Objetivos de Desenvolvimento Sustentável (ODS). O monitoramento local – em nível municipal – das metas da Agenda 2030 requer ferramentas analíticas capazes de processar grandes volumes de dados de maneira transparente e auditável.
+O acompanhamento rigoroso das condições de vida da população ganha especial relevância no contexto da **Agenda 2030** e dos Objetivos de Desenvolvimento Sustentável (ODS). O monitoramento local – ao nível municipal – das metas da Agenda 2030 requer ferramentas analíticas capazes de processar grandes volumes de dados de maneira transparente e auditável.
 
 ## Validade, Fidedignidade e a Natureza dos Indicadores
 
@@ -45,11 +45,11 @@ A transição de pacotes estatísticos clássicos para linguagens de programaç�
 
 Softwares tradicionais como o SPSS, desenvolvidos entre o final da década de 1960 e o início dos anos 1970, popularizaram a análise de dados por meio de interfaces de "apontar e clicar" (*point-and-click*). Embora versáteis e fundamentais para a história da pesquisa quantitativa, essas ferramentas limitam o pesquisador às opções preestabelecidas nos menus do programa. Essa limitação equivale a "desenhar seguindo um tracejado" imposto pelo software.
 
-Em contrapartida, o **R** é uma linguagem de programação fundamentada na escrita de *scripts* (códigos documentados). Desenvolvido inicialmente como um derivado de código aberto da linguagem S (S-Plus), o R foi concebido para ser interativo. O uso de *scripts* libera o potencial analítico e criativo do pesquisador, permitindo o desenvolvimento de novas rotinas, modelagens complexas e, sobretudo, garantindo a **reprodutibilidade** da pesquisa.
+Em contrapartida, o **R** é uma linguagem de programação fundamentada na escrita de *scripts* (roteiros de códigos documentados). Desenvolvido inicialmente como um derivado de código aberto da linguagem S (S-Plus), o R foi concebido para ser interativo. O uso de *scripts* libera o potencial analítico e criativo do pesquisador, permitindo o desenvolvimento de novas rotinas, modelagens complexas e, sobretudo, garantindo a **reprodutibilidade** da pesquisa.
 
 :::{.callout-important}
 ## Reprodutibilidade como Princípio Ético
-Na análise de políticas públicas com dados do IBGE ou do Atlas Brasil, o uso de scripts em R garante que qualquer cidadão ou auditor possa executar o mesmo código e chegar exatamente aos mesmos resultados, configurando um pilar de transparência governamental.
+Na análise de políticas públicas com dados do IBGE ou do Atlas Brasil, o uso de *scripts* em R garante que qualquer cidadão ou auditor possa executar o mesmo código e chegar exatamente aos mesmos resultados, configurando um pilar de transparência governamental.
 :::
 
 ## A Comunidade e o Ecossistema Open Source
@@ -82,7 +82,7 @@ Alguns pacotes avançados (como certas dependências metodológicas) podem reque
 
 # Operações Básicas e Fluxos de Trabalho Modernos
 
-Abaixo, apresentamos uma demonstração da sintaxe do *Tidyverse* moderno, utilizando o operador *pipe* nativo do R (`|>`), para estruturar um processamento hipotético dos dados do Atlas Brasil aplicados ao controle social. 
+Abaixo, apresentamos uma demonstração da sintaxe do *Tidyverse* moderno, utilizando o operador *pipe* nativo do R (`|>`), para estruturar um processamento hipotético dos dados do "Atlas Brasil" aplicados ao controle social. 
 
 ```{r}
 #| label: exemplo-processamento-indicadores
