@@ -1,2 +1,19 @@
-/.quarto/
+# Quarto e diretórios de cache
+.quarto/
+*_cache/
+*_files/
+
+# Arquivos de saída e documentos
+*.html
+*.pdf
+*.docx
+*.doc
+*.txt
+*.log
+*.js
+*.tex
+
+# Arquivos intermediários do Quarto/Jupyter
 **/*.quarto_ipynb
+.ipynb_checkpoints/
+/.quarto/

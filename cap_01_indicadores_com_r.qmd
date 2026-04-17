@@ -1,22 +1,4 @@
 
----
-title: "Métodos Computacionais para Indicadores Sociais e Políticas Públicas"
-subtitle: "Capítulo 1: Fundamentos de Indicadores Sociais e o Ecossistema R"
-author: "Editor-Chefe de Ciência Social Computacional"
-format:
-  html:
-    toc: true
-    number-sections: true
-    theme: cosmo
-  pdf:
-    toc: true
-    number-sections: true
-    colorlinks: true
-execute:
-  warning: false
-  message: false
----
-
 # Introdução aos Indicadores Sociais e a Agenda 2030
 
 A análise de dados em ciências sociais e a formulação de políticas públicas exigem métricas precisas e reprodutíveis. Este manual introduz o desenvolvimento e a análise de indicadores sociais como recursos fundamentais para o planejamento governamental e a atuação de organizações não governamentais. 
@@ -40,6 +22,10 @@ $$ IDH = \sqrt{I_{renda} \times I_{educacao} \times I_{longevidade}} $$
 # O Paradigma Computacional: Por que usar o R?
 
 A transição de pacotes estatísticos clássicos para linguagens de programação abertas representa um salto metodológico na pesquisa social.
+
+
+
+
 
 ## Interfaces de Apontar e Clicar vs. Linguagens de Script
 

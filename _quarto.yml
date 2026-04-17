@@ -1,30 +1,46 @@
 project:
   type: book
 
+lang: pt-BR
+
 book:
-  title: "Métodos Computacionais para Indicadores Sociais e Políticas Públicas"
-  author: "Ronaldo Baltar"
-  date: "2026"
+  title: Métodos Computacionais para Indicadores Sociais e Políticas Públicas
+  subtitle: Usando R  
+  author: Ronaldo Baltar e Cláudia Baltar
+  date: today
+  date-format: 'YYYY'
+  publisher: Editora IHC
+  publisher-place: Londrina
   chapters:
     - index.qmd
-    - intro.qmd
-    - summary.qmd
-    - references.qmd
+    - part: Fundamentos
+      chapters:
+        - summary.qmd
+        - intro.qmd
+        - modelo.qmd
+        - cap_01_indicadores_com_r.qmd
+    - part: Referências
+      chapters:
+      - references.qmd
+      - sobre_os_autores.qmd
 
 bibliography: references.bib
 
 format:
   html:
-    toc: true
-    number-sections: true
-    theme:
-      - cosmo
-      - brand
+    theme: cosmo
+    code-copy: true
+    
   pdf:
-    documentclass: scrreprt
-    toc: true
-    number-sections: true
-    colorlinks: true
+    papersize: a4
+    
+  epub: 
+    toc: true 
+    cover-image: capa.jpg  
+    highlight-style: arrow
+    
+    
+
 execute:
   warning: false
   message: false

@@ -7,3 +7,4 @@
 {"rule":"PT_BARBARISMS_REPLACE_SCRIPTS","sentence":"^\\QO uso de scripts libera o potencial analítico e criativo do pesquisador, permitindo o desenvolvimento de novas rotinas, modelagens complexas e, sobretudo, garantindo a reprodutibilidade da pesquisa.\\E$"}
 {"rule":"PT_BARBARISMS_REPLACE_SCRIPTS","sentence":"^\\QEm contrapartida, o R é uma linguagem de programação fundamentada na escrita de scripts (roteiros de códigos documentados).\\E$"}
 {"rule":"PT_BARBARISMS_REPLACE_SCRIPT","sentence":"^\\QInterfaces de Apontar e Clicar vs. Linguagens de Script\\E$"}
+{"rule":"MORFOLOGIK_RULE_PT_BR","sentence":"^\\QPrefácio {.unnumbered}\\E$"}

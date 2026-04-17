@@ -38,7 +38,5 @@ Ao instalar alguns pacotes que utilizam recursos computacionais mais avançados 
 **Não há nenhum problema em ignorar essa mensagem** e continuar utilizando a versão binária disponível. 
 
 No entanto, se você deseja compilar códigos fontes no seu próprio computador e utiliza o sistema Windows, precisará instalar uma ferramenta de suporte chamada **RTools**. O RTools ocupa cerca de **1 GB de espaço no disco rígido** e pode ser baixado em: 
-<https://cran.r-project.org/bin/windows/Rtools/>
+https://cran.r-project.org/bin/windows/Rtools/
 :::
-
-```

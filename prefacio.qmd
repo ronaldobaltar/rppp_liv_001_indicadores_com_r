@@ -1,0 +1,15 @@
+# Prefácio {.unnumbered}
+
+Este é o prefácio do livro, com numeração romana (i, ii, iii...).
+
+As notas de rodapé aparecem na margem lateral^[Esta é uma nota de margem no estilo Tufte.], característica marcante do design de Edward Tufte.
+
+## Sobre o Autor {.unnumbered}
+
+Informações sobre o autor...
+
+## Agradecimentos {.unnumbered}
+
+Agradecimentos especiais...
+
+\clearpage
