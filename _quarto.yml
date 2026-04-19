@@ -15,34 +15,41 @@ book:
     - index.qmd
     - part: Fundamentos
       chapters:
-        - summary.qmd
         - intro.qmd
-        - modelo.qmd
+        # - modelo_s_margin.qmd
         - cap_01_indicadores_com_r.qmd
     - part: Referências
       chapters:
       - references.qmd
       - sobre_os_autores.qmd
 
-bibliography: references.bib
-
 format:
   html:
     theme: cosmo
     code-copy: true
-    
+
   pdf:
-    papersize: a4
-    
+    documentclass: scrbook    
+    papersize: A4
+    fontsize: 11pt
+    classoption:
+      - oneside
+      - openright
+    include-in-header: preamble.tex
+    #include-in-header:
+    #   text: |
+    #    \typeout{=== FUNCIONOU ===}
+    #    \usepackage{xcolor}
+    #    \pagecolor{yellow}
+  
   epub: 
     toc: true 
     cover-image: capa.jpg  
     highlight-style: arrow
     
-    
+bibliography: references.bib
+csl: abnt.csl          # ABNT para todos os formatos   
 
 execute:
   warning: false
   message: false
-
-

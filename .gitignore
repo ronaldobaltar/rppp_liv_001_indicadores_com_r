@@ -17,3 +17,5 @@
 **/*.quarto_ipynb
 .ipynb_checkpoints/
 /.quarto/
+.Rproj.user
+.Rproj

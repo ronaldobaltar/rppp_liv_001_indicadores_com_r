@@ -1,5 +1,9 @@
-# Prefácio {.unnumbered}
 
-This is a Quarto book.
 
-To learn more about Quarto books visit <https://quarto.org/docs/books>.
+
+# Prefácio A {.unnumbered}
+
+Este é o texto do seu prefácio. Note que o comando 
+no seu YAML garantiu que a contagem começasse na Falsa Folha de Rosto, mas o
+impediu que o número fosse impresso
+nas páginas iniciais.

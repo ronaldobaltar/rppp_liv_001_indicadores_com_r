@@ -16,7 +16,9 @@ Um dos exemplos mais consolidados dessa estruturação é o **Índice de Desenvo
 
 Em termos formais, índices compostos frequentemente recorrem a normalizações e médias ponderadas ou geométricas. A formulação matemática clássica para agregação de subíndices de desenvolvimento pode ser expressa em LaTeX da seguinte forma:
 
-$$ IDH = \sqrt{I_{renda} \times I_{educacao} \times I_{longevidade}} $$
+$$ 
+IDH = \sqrt{I_{renda} \times I_{educacao} \times I_{longevidade}} 
+$$
 
 
 # O Paradigma Computacional: Por que usar o R?
