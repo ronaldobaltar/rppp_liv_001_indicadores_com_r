@@ -1,9 +1,8 @@
 
-# Teste
-s
+# Texto modelo
 
 ::: {.content-visible when-format="pdf"}
-Antes iria o tableofcontents, mas não vai mais. Vamos ver. Lorem class magna sapien duis convallis, convallis bibendum aenean quam. Enim porta risus arcu turpis lobortis nisl risus maecenas cubilia lobortis! Neque egestas condimentum. Adipiscing libero nisi neque proin libero ac ornare; mauris egestas cursus! Condimentum conubia phasellus class molestie
+\lettrine{A}{ntes} iria o tableofcontents, mas não vai mais. Vamos ver. Lorem class magna sapien duis convallis, convallis bibendum aenean quam. Enim porta risus arcu turpis lobortis nisl risus maecenas cubilia lobortis! Neque egestas condimentum. Adipiscing libero nisi neque proin libero ac ornare; mauris egestas cursus! Condimentum conubia phasellus class molestie
 vehicula, nisl semper nec massa. 
 :::
 

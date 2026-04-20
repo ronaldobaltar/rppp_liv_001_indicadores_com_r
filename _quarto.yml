@@ -16,7 +16,7 @@ book:
     - part: Fundamentos
       chapters:
         - intro.qmd
-        # - modelo_s_margin.qmd
+        - modelo.qmd
         - cap_01_indicadores_com_r.qmd
     - part: Referências
       chapters:
@@ -30,22 +30,39 @@ format:
 
   pdf:
     documentclass: scrbook    
-    papersize: A4
+    papersize: a4
     fontsize: 11pt
     classoption:
-      - oneside
-      - openright
+      - open = right
+      - twoside = true
+    mainfont: "TeX Gyre Termes"
+    sansfont: "Fira Sans"
+    monofont: "Fira Mono"
+    mathfont: "Fira Math" 
+    highlight-style: github
+    #code-block-border-left: true
+    #code-block-bg: true
+    code-line-numbers: true
+    biblio-method: biblatex
+    biblio-style: abnt
+    biblatexoptions: [autolang=babel] 
+    # Margens ao estilo Tufte book
+    geometry:
+      - "top=2.5cm"
+      - "bottom=2.5cm"
+      - "inner=3cm"          # Margem interna para encadernação
+      - "textwidth=12cm"     # Largura do bloco de texto principal
+      - "marginparwidth=4.5cm"   # LARGURA DA MARGEM para notas!
+      - "marginparsep=5mm"   # Espaço entre o texto e a nota
+      - "outer=6cm"        
+      - "twoside=true"
     include-in-header: preamble.tex
-    #include-in-header:
-    #   text: |
-    #    \typeout{=== FUNCIONOU ===}
-    #    \usepackage{xcolor}
-    #    \pagecolor{yellow}
+    
   
   epub: 
     toc: true 
     cover-image: capa.jpg  
-    highlight-style: arrow
+    highlight-style: github
     
 bibliography: references.bib
 csl: abnt.csl          # ABNT para todos os formatos   

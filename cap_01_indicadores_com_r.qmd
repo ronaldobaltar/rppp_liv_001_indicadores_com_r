@@ -3,7 +3,7 @@
 
 A análise de dados em ciências sociais e a formulação de políticas públicas exigem métricas precisas e reprodutíveis. Este manual introduz o desenvolvimento e a análise de indicadores sociais como recursos fundamentais para o planejamento governamental e a atuação de organizações não governamentais. 
 
-O acompanhamento rigoroso das condições de vida da população ganha especial relevância no contexto da **Agenda 2030** e dos Objetivos de Desenvolvimento Sustentável (ODS). O monitoramento local – ao nível municipal – das metas da Agenda 2030 requer ferramentas analíticas capazes de processar grandes volumes de dados de maneira transparente e auditável.
+O acompanhamento rigoroso das condições de vida da população ganha especial relevância no contexto da **Agenda 2030** e dos Objetivos de Desenvolvimento Sustentável (ODS). O monitoramento local – ao nível municipal – das metas da Agenda 2030 requer ferramentas analíticas capazes de processar grandes volumes de dados de maneira transparente e auditávegil.
 
 ## Validade, Fidedignidade e a Natureza dos Indicadores
 
