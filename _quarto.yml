@@ -30,6 +30,7 @@ book:
 format:
   html:
     theme: [simplex, custom.scss]
+    highlight-style: infosoc_hilightcode.theme
     code-copy: true
 
   pdf:
@@ -43,7 +44,7 @@ format:
     sansfont: "Fira Sans"
     monofont: "Fira Mono"
     mathfont: "Fira Math" 
-    highlight-style: ayu
+    highlight-style: infosoc_hilightcode.theme
     code-line-numbers: true
     biblio-method: biblatex
     biblio-style: abnt
@@ -64,7 +65,7 @@ format:
   epub: 
     toc: true 
     cover-image: capa_ebook_tons_laranja_creme_azul.png 
-    highlight-style: ayu
+    highlight-style: infosoc_hilightcode.theme
     css: epub-styles.css
     
 bibliography: references.bib
