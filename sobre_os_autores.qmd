@@ -2,8 +2,9 @@
 
 Ronaldo Baltar
 : é sociólogo formado em 1985 pela Universidade de Brasília. No mesmo período, concluiu curso técnico de programação de computadores e mantém um aperfeiçoamento contínuo, sobretudo em linguagens e métodos de análise de dados. Concluiu o mestrado em 1990 em Sociologia pela Universidade Estadual de Campinas e em 1996, defendeu o Doutorado em Sociologia, na Universidade de São Paulo. Desde então vem desenvolvendo pesquisas, publicando artigos e ministrando cursos sobre análise computacional de dados para a pesquisa aplicada em ciências sociais. Atuou em diversos projetos de análise e avaliação de políticas públicas e programas sociais. Atualmente é professor do Departamento de Ciências Sociais da Universidade Estadual de Londrina, onde coordena o projeto InfoSoc para formação complementar de graduação em informática aplicada à pesquisa social, e participa como pesquisador do projeto Populações e Dinâmica Social ([https://populacoes.info](https://populacoes.info)).
-|
-|
+
+:
+
 
 Cláudia Siqueira Baltar
 : é demógrafa e professora do Departamento de Ciências Sociais da Universidade Estadual de Londrina. Graduou-se em ciências Sociais em 2000 na Universidade de São Paulo. Concluiu o Mestrado em Ciência Política na Universidade de Campinas em 2004 e defendeu tese de Doutorado em 2008 no Programa de Pós-Graduação em Demografia da Universidade de Campinas. Foi pesquisadora bolsista do Núcleo de Estudos de População – NEPO, na Universidade de Campinas. Atualmente é coordenadora do projeto Populações e Dinâmica Social na Universidade Estadual de Londrina ([https://populacoes.info](https://populacoes.info)).

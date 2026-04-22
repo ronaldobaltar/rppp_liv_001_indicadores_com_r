@@ -1,0 +1,168 @@
+/* ==========================================================
+   Estilo CSS para E-book (Cubismo Geométrico)
+   Mapeamento do preamble.tex para Quarto/Pandoc EPUB
+========================================================== */
+
+:root {
+  /* =========================
+     CORES DA MARCA
+     ========================= */
+  --laranja-queimado: #A33B14;
+  --laranja-vibrante: #FF3B00;
+  --laranja:          #F26D21;
+  --pessego:          #FFC299;
+  --creme:            #FDFBF7;
+  --bege:             #D9CBB8;
+  --azul:             #2A75D3;
+  --ciano:            #00C4D9;
+  --azul-cobalto:     #0047AB;
+  --texto-escuro:     #1A1A1A;
+  --branco:           #FFFFFF;
+
+  /* =========================
+     TIPOGRAFIA
+     ========================= */
+  /* Stack serifada garantida para o corpo do texto na maioria dos e-readers */
+  --fonte-corpo: "Georgia", "Times New Roman", serif;
+  /* Fonte Fira primária para títulos, com fallback genérico */
+  --fonte-titulo: "Fira Sans", "Fira", sans-serif;
+}
+
+/* =========================
+   CONFIGURAÇÕES GERAIS
+   ========================= */
+body {
+  font-family: var(--fonte-corpo);
+  color: var(--texto-escuro);
+  background-color: var(--branco); /* Fundo base limpo para leitura de longo prazo */
+  line-height: 1.45;
+  margin: 0;
+  padding: 5%;
+}
+
+/* =========================
+   PARÁGRAFOS
+   ========================= */
+p {
+  text-indent: 1.2em; /* \parindent 1.2em */
+  margin-top: 0;
+  margin-bottom: 0.2em; /* \parskip 0.2em */
+  text-align: justify;
+}
+
+/* O primeiro parágrafo após um título não deve receber indentação, 
+   uma prática tipográfica padrão consolidada */
+h1 + p, 
+h2 + p, 
+h3 + p {
+  text-indent: 0;
+}
+
+/* =========================
+   TÍTULOS E ESTRUTURA
+   ========================= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--fonte-titulo);
+  color: var(--laranja-queimado); /* \setkomafont{disposition}{\color{laranjaqueimado}} */
+  font-weight: bold;
+  line-height: 1.2;
+  page-break-after: avoid; /* Previne títulos solitários no fim da página */
+}
+
+h1 {
+  font-size: 2em; /* \Huge */
+  margin-top: 2.0cm; /* \RedeclareSectionCommand beforeskip=2.0cm */
+  margin-bottom: 1.0cm; /* \RedeclareSectionCommand afterskip=1.0cm */
+}
+
+h2 {
+  font-size: 1.5em; /* \Large */
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+/* =========================
+   FORMATAÇÃO DE CAPÍTULOS
+   ========================= */
+/* Reproduz o bloco \colorbox{laranjaqueimado} com número branco do LaTeX */
+span.chapter-number {
+  background-color: var(--laranja-queimado);
+  color: var(--branco);
+  padding: 0.15em 0.35em;
+  margin-right: 0.4em;
+  display: inline-block;
+  vertical-align: baseline;
+}
+
+/* =========================
+   FORMATAÇÃO DE PARTES
+   ========================= */
+/* Classe estrutural gerada pelo Quarto/Pandoc para dividir seções principais */
+section.level1.part {
+  background-color: var(--pessego); /* \pagecolor{pessego} */
+  margin: -5%; /* Expande o fundo para as margens do body, dependendo do leitor */
+  padding: 10% 5%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+section.level1.part h1 {
+  font-size: 2.5em;
+  margin-top: 0;
+}
+
+/* Número da parte refletindo o contraste frio com \color{azulcobalto} */
+span.part-number {
+  color: var(--azul-cobalto);
+  display: block;
+  font-size: 1.2em;
+  margin-bottom: 0.3em;
+}
+
+/* =========================
+   CABEÇALHOS E NAVEGAÇÃO
+   ========================= */
+/* Elementos de navegação (links, índices) em e-books adotam o azul cobalto
+   para indicar interatividade mantendo a sobriedade */
+a {
+  color: var(--azul-cobalto);
+  text-decoration: none;
+}
+
+a:hover, 
+a:active {
+  color: var(--azul);
+}
+
+/* =========================
+   ELEMENTOS TIPOGRÁFICOS EXTRAS
+   ========================= */
+/* Capitular (equivalente ao \lettrine) */
+span.dropcap {
+  float: left;
+  font-family: var(--fonte-titulo);
+  font-size: 3.2em;
+  color: var(--laranja-queimado);
+  line-height: 0.8;
+  margin-right: 0.1em;
+  margin-top: 0.05em;
+}
+
+/* Caixas de destaque para conteúdo técnico/didático */
+div.callout {
+  background-color: var(--creme);
+  border-left: 4px solid var(--laranja-vibrante);
+  padding: 1em;
+  margin: 1.5em 0;
+}
+
+div.callout-title {
+  font-family: var(--fonte-titulo);
+  color: var(--laranja-queimado);
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}

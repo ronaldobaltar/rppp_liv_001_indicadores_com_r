@@ -19,6 +19,9 @@ Litora class quisque ut porttitor nostra at fames sollicitudin. Vel mauris penat
 #| column: margin
 
 library(ggplot2)
+source("tema_livro.R")
+definir_tema_livro() 
+
 mtcars2 <- mtcars
 mtcars2$am <- factor(
   mtcars$am, labels = c('automatic', 'manual')
@@ -26,7 +29,7 @@ mtcars2$am <- factor(
 ggplot(mtcars2, aes(hp, mpg, color = am)) +
   geom_point() +
   geom_smooth(formula = y ~ x, method = "loess") +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') 
 ```
 
 Lorem semper aliquam felis enim gravida velit himenaeos purus
@@ -50,8 +53,6 @@ netus sem venenatis nullam.
 You an also place tables in the margin of your document by specifying column: margin.
 
 ```{r}
-#| column: margin
-
 knitr::kable(
   mtcars[1:3, 1:3]
 )
@@ -79,6 +80,23 @@ magnis a ac eleifend hac lobortis congue! Fusce vivamus
 condimentum sociis iaculis magna luctus neque. In ac est; eget
 tristique orci cursus rutrum scelerisque.
 
+```{r}
+mtcars[1:6, 1:5] |>
+  gt(rownames_to_stub = TRUE) |>
+  tab_header(
+    title = "Desempenho de Veículos Selecionados",
+    subtitle = "Consumo, número de cilindros e deslocamento volumétrico"
+  ) |>
+  tab_source_note(
+    source_note = "Fonte: Motor Trend Car Road Tests (1974)."
+  ) |>
+  tab_footnote(
+    footnote = "Milhas por galão norte-americano.",
+    locations = cells_column_labels(columns = mpg)
+  ) |>
+  tema_tabela_livro()
+```
+
 Consectetur ac quam penatibus ac arcu, imperdiet consequat
 scelerisque nisl commodo nisi? Magna dictumst quam purus,
 cursus egestas luctus posuere hendrerit. Facilisis auctor
@@ -99,7 +117,6 @@ gravida fames pellentesque.
 For figures and tables, you may leave the content in the body of the document while placing the caption in the margin of the document. Using cap-location: margin in a code cell or document front matter to control this. For example:
 
 ```{r}
-#| label: fig-cap-margin
 #| fig-cap: "MPG vs horsepower, colored by transmission."
 
 library(ggplot2)
@@ -110,7 +127,7 @@ mtcars2$am <- factor(
 ggplot(mtcars2, aes(hp, mpg, color = am)) +
   geom_point() +
   geom_smooth(formula = y ~ x, method = "loess") +
-  theme(legend.position = 'bottom')
+  theme(legend.position = 'bottom') 
 ```
 
 Consectetur blandit pellentesque arcu praesent tortor cras

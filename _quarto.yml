@@ -3,6 +3,10 @@ project:
 
 lang: pt-BR
 
+knitr:
+       opts_chunk:
+          dev: ragg_png          # HTML e EPUB
+
 book:
   title: Métodos Computacionais para Indicadores Sociais e Políticas Públicas
   subtitle: Usando R  
@@ -25,7 +29,7 @@ book:
 
 format:
   html:
-    theme: cosmo
+    theme: [simplex, custom.scss]
     code-copy: true
 
   pdf:
@@ -39,9 +43,7 @@ format:
     sansfont: "Fira Sans"
     monofont: "Fira Mono"
     mathfont: "Fira Math" 
-    highlight-style: github
-    #code-block-border-left: true
-    #code-block-bg: true
+    highlight-style: ayu
     code-line-numbers: true
     biblio-method: biblatex
     biblio-style: abnt
@@ -61,8 +63,9 @@ format:
   
   epub: 
     toc: true 
-    cover-image: capa.jpg  
-    highlight-style: github
+    cover-image: capa_ebook_tons_laranja_creme_azul.png 
+    highlight-style: ayu
+    css: epub-styles.css
     
 bibliography: references.bib
 csl: abnt.csl          # ABNT para todos os formatos   

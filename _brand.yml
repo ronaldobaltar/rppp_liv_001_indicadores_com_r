@@ -1,6 +1,6 @@
 color:
-  primary: "#fb3f02" 
-  secondary: "#2E86AB"
+  primary: "#FB2A02" #laranjaqueimado
+  secondary: "#FB3F02" #laranja
 
 logo:
   images:
