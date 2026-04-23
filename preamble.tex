@@ -1,0 +1,210 @@
+% =========================
+% TIPOGRAFIA
+% =========================
+
+\usepackage{microtype}
+\usepackage{lettrine}
+
+% =========================
+% CORES INFOSOC (Cubismo laranja creme azul)
+% =========================
+
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\usepackage{afterpage}
+\usepackage{etoolbox}
+
+% Definição exata da paleta de apoio
+\definecolor{laranjaqueimado}{HTML}{A33B14}
+\definecolor{laranjavibrante}{HTML}{FF3B00}
+\definecolor{laranja}{HTML}{F26D21}
+\definecolor{pessego}{HTML}{FFC299}
+\definecolor{creme}{HTML}{FDFBF7}
+\definecolor{bege}{HTML}{D9CBB8}
+\definecolor{azul}{HTML}{2A75D3}
+\definecolor{ciano}{HTML}{00C4D9}
+\definecolor{azulcobalto}{HTML}{0047AB}
+\definecolor{textoescuro}{HTML}{1A1A1A}
+
+% =========================
+% KOMA - FONTES E CORES ESTRUTURAIS
+% =========================
+
+%Todos os títulos, incluindo o sumário
+\setkomafont{disposition}{\sffamily\color{azulcobalto}}
+
+% Título da primeira página do livro
+\setkomafont{title}{\sffamily\color{laranjavibrante}}
+\setkomafont{author}{\sffamily}
+\setkomafont{date}{\sffamily}
+
+
+
+%Numeração da parte
+\setkomafont{partnumber}{\sffamily\bfseries\color{laranjaqueimado}\Huge}
+\setkomafont{part}{\sffamily\bfseries\color{laranjavibrante}\fontsize{60}{76}\selectfont}
+
+% Capítulo é definido mais abaixos
+
+% Seções
+\setkomafont{section}{\sffamily\bfseries\color{laranjavibrante}\Large}
+\setkomafont{subsection}{\sffamily\color{azul}}
+\setkomafont{subsubsection}{\sffmaily\color{azulcobalto}}
+
+% Seções no TOC
+\usepackage{tocbasic}
+
+% Comando auxiliar que recebe o texto da entrada como #1
+
+\newcommand{\formatacaoparte}[1]{%
+  \setlength{\fboxsep}{6pt}%
+  \colorbox{pessego}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep+28pt\relax][l]{%
+      \color{laranjaqueimado}\sffamily\bfseries\large #1%
+    }%
+  }%
+}
+
+\DeclareTOCStyleEntry[
+  entryformat=\formatacaoparte,
+  pagenumberformat={\color{laranjaqueimado}\sffamily\bfseries},
+  linefill={\leavevmode\color{laranjaqueimado}\TOCLineLeaderFill},
+  beforeskip=1.5em
+]{tocline}{part}
+
+
+\DeclareTOCStyleEntry[
+  entryformat={\color{laranjaqueimado}\sffamily},
+  pagenumberformat={\color{laranjaqueimado}\sffamily\bfseries},
+  linefill=\TOCLineLeaderFill
+]{tocline}{chapter}
+
+\DeclareTOCStyleEntry[
+  entryformat={\color{laranjavibrante}\sffamily},
+  pagenumberformat=\sffamily,
+  linefill=\TOCLineLeaderFill
+]{tocline}{section}
+
+\DeclareTOCStyleEntry[
+  entryformat={\color{azul}\sffamily},
+  pagenumberformat=\sffamily
+]{tocline}{subsection}
+
+
+% --
+% =========================
+% CAPÍTULOS
+% =========================
+
+\RedeclareSectionCommand[
+  beforeskip=2.0cm,
+  afterskip=1.0cm
+]{chapter}
+
+% Remove o ponto após o número (padrão KOMA é "1.")
+\renewcommand*{\chapterformat}{\thechapter}
+
+% #2 = número formatado | #3 = título
+% \ifblank: se #2 vazio (cap. não numerado), não exibe a caixa
+\renewcommand*{\chapterlinesformat}[3]{%
+  \noindent
+  \ifblank{#2}{}{%
+    {%
+      \setlength{\fboxsep}{0.45em}%
+      \colorbox{bege}{%
+        \hspace{0.3em}%
+        {\color{white}\bfseries\huge%
+          \rule[-0.25em]{0pt}{1.2em}#2}%
+        \hspace{0.3em}%
+      }%
+    }%
+    \par\vspace{0.7em}%
+  }%
+  {\sffamily\bfseries\Huge\color{laranjaqueimado}#3}%
+  \par
+}
+% --
+
+% =========================
+% PARTES
+% =========================
+
+\renewcommand*{\partformat}{\partname~\thepart}
+\renewcommand*{\partpagestyle}{empty}
+
+% \pretocmd: ativa a cor de fundo ANTES da página de parte ser composta.
+% Utiliza o pêssego da nova paleta para um fundo de transição suave.
+\pretocmd{\part}{%
+  \cleardoublepage
+  \pagecolor{pessego}%
+}{}{}
+
+% \partheadendvskip: chamado DENTRO da página de parte, ao final.
+% \afterpage{\nopagecolor} é acionado após a página ser finalizada,
+% restaurando o fundo branco puro para as páginas seguintes.
+\renewcommand*{\partheadstartvskip}{\null\vfill}
+\renewcommand*{\partheadendvskip}{%
+  \vfill\null
+  \afterpage{\nopagecolor}%
+}
+
+% =========================
+% CABEÇALHO
+% =========================
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+
+\automark[section]{chapter}
+
+\ihead{\headmark}
+\ohead{\pagemark}
+
+% Elementos de navegação em azul cobalto garantem sobriedade e leitura eficiente
+\setkomafont{pagehead}{\sffamily\small\color{laranja}}
+\setkomafont{pagenumber}{\sffamily\small\color{laranja}}
+
+\KOMAoptions{headsepline=true}
+% Colorir a linha do cabeçalho
+\addtokomafont{headsepline}{\color{bege}}
+
+% =========================
+% LEGENDAS (Figuras e Tabelas)
+% =========================
+
+% Altera a cor e a fonte do texto da legenda
+\setkomafont{caption}{\sffamily\small\color{azulcobalto}}
+
+% Altera a cor e a fonte do rótulo ("Figura 1:", "Tabela 1:")
+% O uso do \sffamily e \bfseries cria contraste com o texto descritivo
+\setkomafont{captionlabel}{\sffamily\small\color{azulcobalto}}
+
+
+% =========================
+% NOTAS DE RODAPÉ
+% =========================
+
+% Altera a cor do texto da nota de rodapé
+\setkomafont{footnote}{\color{azulcobalto}}
+
+% Altera a cor do número/marcação da nota no rodapé da página
+\setkomafont{footnotelabel}{\color{azulcobalto}}
+
+% Opcional: Altera a cor do número sobrescrito no meio do texto principal
+% \setkomafont{footnotereference}{\color{azulcobalto}}
+
+
+% =========================
+% NOTAS MARGINAIS (Integração Quarto)
+% =========================
+
+% 1. Assume o controle sobre as notas geradas por marcações do Quarto (.aside)
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\sffamily\small\color{azulcobalto}}
+
+% 2. Mantém a intercepção do comando KOMA-Script para marcações manuais no texto
+\let\oldmarginpar\marginpar
+\renewcommand{\marginpar}[1]{\oldmarginpar{\sffamily\small\color{azulcobalto}#1}}
+
+\let\oldmarginline\marginline
+\renewcommand{\marginline}[1]{\oldmarginline{\sffamily\small\color{azulcobalto}#1}}
