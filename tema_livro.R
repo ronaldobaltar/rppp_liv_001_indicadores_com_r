@@ -290,9 +290,14 @@ tema_tabela_livro <- function(data) {
       weight = 400
     ) |>
     tab_options(
+      # Fonte
+      table.font.size = px(12),
+      heading.title.font.size = px(14),
+      heading.subtitle.font.size = px(12),
+      # source_notes.font.size = px(9)
       # Estrutura e alinhamento do cabeçalho
       heading.align = "left",
-      heading.background.color = "transparent",
+      heading.background.color = cor_bege,
       heading.border.bottom.color = "transparent",
       
       # Linhas horizontais externas

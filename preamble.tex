@@ -38,8 +38,6 @@
 \setkomafont{author}{\sffamily}
 \setkomafont{date}{\sffamily}
 
-
-
 %Numeração da parte
 \setkomafont{partnumber}{\sffamily\bfseries\color{laranjaqueimado}\Huge}
 \setkomafont{part}{\sffamily\bfseries\color{laranjavibrante}\fontsize{60}{76}\selectfont}
@@ -51,7 +49,10 @@
 \setkomafont{subsection}{\sffamily\color{azul}}
 \setkomafont{subsubsection}{\sffmaily\color{azulcobalto}}
 
-% Seções no TOC
+% =========================
+% TOC
+% =========================
+
 \usepackage{tocbasic}
 
 % Comando auxiliar que recebe o texto da entrada como #1
@@ -90,8 +91,6 @@
   pagenumberformat=\sffamily
 ]{tocline}{subsection}
 
-
-% --
 % =========================
 % CAPÍTULOS
 % =========================
@@ -123,7 +122,6 @@
   {\sffamily\bfseries\Huge\color{laranjaqueimado}#3}%
   \par
 }
-% --
 
 % =========================
 % PARTES
@@ -173,11 +171,10 @@
 % =========================
 
 % Altera a cor e a fonte do texto da legenda
-\setkomafont{caption}{\sffamily\small\color{azulcobalto}}
-
+\setkomafont{caption}{\sffamily\color{laranjaqueimado}}
+\setcapindent{0em}
 % Altera a cor e a fonte do rótulo ("Figura 1:", "Tabela 1:")
-% O uso do \sffamily e \bfseries cria contraste com o texto descritivo
-\setkomafont{captionlabel}{\sffamily\small\color{azulcobalto}}
+\setkomafont{captionlabel}{\sffamily\color{laranjaqueimado}}
 
 
 % =========================
@@ -185,14 +182,38 @@
 % =========================
 
 % Altera a cor do texto da nota de rodapé
-\setkomafont{footnote}{\color{azulcobalto}}
+\setkomafont{footnote}{\sffamily\\color{azulcobalto}}
 
 % Altera a cor do número/marcação da nota no rodapé da página
-\setkomafont{footnotelabel}{\color{azulcobalto}}
+\setkomafont{footnotelabel}{\sffamily\\color{azulcobalto}}
 
 % Opcional: Altera a cor do número sobrescrito no meio do texto principal
 % \setkomafont{footnotereference}{\color{azulcobalto}}
 
+% =========================
+% FONTE DO CORPO DAS TABELAS
+% =========================
+
+% Injeta \sffamily no início dos principais ambientes de tabela
+\AtBeginEnvironment{table}{\sffamily}
+\AtBeginEnvironment{tabular}{\sffamily}
+\AtBeginEnvironment{tabular*}{\sffamily}
+\AtBeginEnvironment{longtable}{\sffamily}
+
+% =========================
+% CONTROLE DE FONTE EM MINIPAGE (TABELAS)
+% =========================
+
+% 1. Cria a variável de estado lógico (inicia como falsa por padrão)
+\newtoggle{dentrodetabela}
+
+% 2. Altera o estado para verdadeiro ao iniciar um ambiente de tabela
+\AtBeginEnvironment{table}{\toggletrue{dentrodetabela}}
+
+% 3. Injeta a verificação condicional no início de toda minipage
+\AtBeginEnvironment{minipage}{%
+  \iftoggle{dentrodetabela}{\sffamily\small}{}%
+}
 
 % =========================
 % NOTAS MARGINAIS (Integração Quarto)
@@ -200,11 +221,11 @@
 
 % 1. Assume o controle sobre as notas geradas por marcações do Quarto (.aside)
 \usepackage{marginnote}
-\renewcommand*{\marginfont}{\sffamily\small\color{azulcobalto}}
+\renewcommand*{\marginfont}{\small\color{azulcobalto}}
 
 % 2. Mantém a intercepção do comando KOMA-Script para marcações manuais no texto
 \let\oldmarginpar\marginpar
-\renewcommand{\marginpar}[1]{\oldmarginpar{\sffamily\small\color{azulcobalto}#1}}
+\renewcommand{\marginpar}[1]{\oldmarginpar{\small\color{azulcobalto}#1}}
 
 \let\oldmarginline\marginline
-\renewcommand{\marginline}[1]{\oldmarginline{\sffamily\small\color{azulcobalto}#1}}
+\renewcommand{\marginline}[1]{\oldmarginline{\small\color{azulcobalto}#1}}
