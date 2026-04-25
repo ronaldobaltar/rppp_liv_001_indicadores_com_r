@@ -84,7 +84,7 @@ tristique orci cursus rutrum scelerisque.
 mtcars[1:6, 1:5] |>
   gt(rownames_to_stub = TRUE) |>
   tab_header(
-    title = "Desempenho de Veículos Selecionados",
+    title = "Tabela 1 - Desempenho de Veículos Selecionados",
     subtitle = "Consumo, número de cilindros e deslocamento volumétrico"
   ) |>
   tab_source_note(

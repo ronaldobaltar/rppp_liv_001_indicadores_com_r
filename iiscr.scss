@@ -1,0 +1,99 @@
+/*-- scss:defaults --*/
+
+// ==========================================================
+// PALETA DE CORES 
+// ==========================================================
+$laranja-queimado: #A33B14;
+$laranja-vibrante: #FF3B00;
+$pessego:          #FFC299;
+$creme:            #FDFBF7;
+$bege:             #D9CBB8;
+$azul-cobalto:     #0047AB;
+$texto-escuro:     #1A1A1A;
+$branco:           #FFFFFF;
+$marrom:           #8f6c55;
+
+// ==========================================================
+// VARIÁVEIS GERAIS DO QUARTO/BOOTSTRAP
+// ==========================================================
+$primary: #FFC299 !default;
+$font-size-root: 18px !default;
+$body-bg: $branco;
+$body-color: $texto-escuro;
+$headings-color: $laranja-queimado;
+$link-color: $laranja-vibrante; 
+
+/*-- scss:rules --*/
+
+
+// Títulos
+h1, h2, h3, h4, h5, h6 {
+  margin-bottom: 0.5em;
+}
+
+header-section-number {
+  color: $laranja-queimado
+}
+
+.column-margin figcaption, .margin-caption, div.aside, aside, .column-margin {
+    color: $azul-cobalto;
+    font-size: .825rem;
+}
+
+// Transição suave para links ao passar o mouse
+a {
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+
+  &:hover {
+    color: $laranja-vibrante;
+  }
+}
+
+// ==========================================================
+// NOTAS MARGINAIS
+// ==========================================================
+// O Quarto utiliza estas classes para gerenciar conteúdo lateral
+//.margin-note, 
+//.margin-caption, 
+//aside {
+//  color: $azul-cobalto;
+//  font-size: 0.85em;
+//  padding-left: 0.75rem;
+//  margin-bottom: 1rem;
+// }
+
+// ==========================================================
+// Sidebar
+// ==========================================================
+
+.sidebar-title {
+  color: $marrom;
+}
+
+div.sidebar-item-container .active {
+  font-weight: bold;
+}
+
+.sidebar nav[role=doc-toc] ul>li>a.active, .sidebar nav[role=doc-toc] ul>li>ul>li>a.active{
+  font-weight: bold;
+}
+
+img.quarto-cover-image {
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.15);
+}
+
+//.quarto-section-identifier {
+//  color: #8f6c55;
+//  font-weight: normal;
+//}
+
+
+// ==========================================================
+// Code gradient background
+// ==========================================================
+
+
+pre {
+  background-image: linear-gradient(160deg,#ffeadb 0,#fffcfa 100%);
+}

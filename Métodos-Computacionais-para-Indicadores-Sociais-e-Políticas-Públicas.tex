@@ -1,0 +1,1190 @@
+% Options for packages loaded elsewhere
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  brazilian,
+  11pt,
+  a4paper,
+  open = right,
+  twoside = true]{scrbook}
+\usepackage{xcolor}
+\usepackage[top=2.5cm,bottom=2.5cm,inner=3cm,textwidth=12cm,marginparwidth=4.5cm,marginparsep=5mm,outer=6cm,twoside=true]{geometry}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+  \setmainfont[]{TeX Gyre Termes}
+  \setsansfont[]{Fira Sans}
+  \setmonofont[]{Fira Mono}
+  \setmathfont[]{Fira Math}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+% Make \paragraph and \subparagraph free-standing
+\makeatletter
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}{
+    \@ifstar
+      \xxxParagraphStar
+      \xxxParagraphNoStar
+  }
+  \newcommand{\xxxParagraphStar}[1]{\oldparagraph*{#1}\mbox{}}
+  \newcommand{\xxxParagraphNoStar}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}{
+    \@ifstar
+      \xxxSubParagraphStar
+      \xxxSubParagraphNoStar
+  }
+  \newcommand{\xxxSubParagraphStar}[1]{\oldsubparagraph*{#1}\mbox{}}
+  \newcommand{\xxxSubParagraphNoStar}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+\makeatother
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{253,251,247}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.00,0.28,0.67}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.28,0.67}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.95,0.43,0.13}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.32,0.36,0.40}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.77,0.85}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.64,0.23,0.08}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.64,0.23,0.08}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.55,0.29,0.58}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.16,0.46,0.83}{#1}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.95,0.43,0.13}{\underline{#1}}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.28,0.67}{\textbf{#1}}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.11,0.47,0.80}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{1.00,0.23,0.00}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.64,0.23,0.08}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.16,0.46,0.83}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{1.00,0.23,0.00}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.95,0.43,0.13}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.16,0.46,0.83}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.85,0.00,0.31}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.85,0.00,0.31}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.00,0.72,0.25}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.10,0.10,0.10}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.40,0.22,0.33}{\textit{#1}}}
+
+\usepackage{longtable,booktabs,array}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\newsavebox\pandoc@box
+\newcommand*\pandocbounded[1]{% scales image to fit in text height/width
+  \sbox\pandoc@box{#1}%
+  \Gscale@div\@tempa{\textheight}{\dimexpr\ht\pandoc@box+\dp\pandoc@box\relax}%
+  \Gscale@div\@tempb{\linewidth}{\wd\pandoc@box}%
+  \ifdim\@tempb\p@<\@tempa\p@\let\@tempa\@tempb\fi% select the smaller of both
+  \ifdim\@tempa\p@<\p@\scalebox{\@tempa}{\usebox\pandoc@box}%
+  \else\usebox{\pandoc@box}%
+  \fi%
+}
+% Set default figure placement to htbp
+\def\fps@figure{htbp}
+\makeatother
+
+
+
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifPDFTeX
+\else
+\babelfont{rm}[]{TeX Gyre Termes}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+
+
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+
+
+
+ 
+
+
+% =========================
+% TIPOGRAFIA
+% =========================
+
+\usepackage{microtype}
+\usepackage{lettrine}
+
+% =========================
+% CORES INFOSOC (Cubismo laranja creme azul)
+% =========================
+
+\usepackage{xcolor}
+\usepackage{pagecolor}
+\usepackage{afterpage}
+\usepackage{etoolbox}
+
+% Definição exata da paleta de apoio
+\definecolor{laranjaqueimado}{HTML}{A33B14}
+\definecolor{laranjavibrante}{HTML}{FF3B00}
+\definecolor{laranja}{HTML}{F26D21}
+\definecolor{pessego}{HTML}{FFC299}
+\definecolor{creme}{HTML}{FDFBF7}
+\definecolor{bege}{HTML}{D9CBB8}
+\definecolor{azul}{HTML}{2A75D3}
+\definecolor{ciano}{HTML}{00C4D9}
+\definecolor{azulcobalto}{HTML}{0047AB}
+\definecolor{textoescuro}{HTML}{1A1A1A}
+
+% =========================
+% KOMA - FONTES E CORES ESTRUTURAIS
+% =========================
+
+%Todos os títulos, incluindo o sumário
+\setkomafont{disposition}{\sffamily\color{azulcobalto}}
+
+% Título da primeira página do livro
+\setkomafont{title}{\sffamily\color{laranjavibrante}}
+\setkomafont{author}{\sffamily}
+\setkomafont{date}{\sffamily}
+
+%Numeração da parte
+\setkomafont{partnumber}{\sffamily\bfseries\color{laranjaqueimado}\Huge}
+\setkomafont{part}{\sffamily\bfseries\color{laranjavibrante}\fontsize{60}{76}\selectfont}
+
+% Capítulo é definido mais abaixos
+
+% Seções
+\setkomafont{section}{\sffamily\bfseries\color{laranjavibrante}\Large}
+\setkomafont{subsection}{\sffamily\color{azul}}
+\setkomafont{subsubsection}{\sffmaily\color{azulcobalto}}
+
+% =========================
+% TOC
+% =========================
+
+\usepackage{tocbasic}
+
+% Comando auxiliar que recebe o texto da entrada como #1
+
+\newcommand{\formatacaoparte}[1]{%
+  \setlength{\fboxsep}{6pt}%
+  \colorbox{pessego}{%
+    \makebox[\dimexpr\linewidth-2\fboxsep+28pt\relax][l]{%
+      \color{laranjaqueimado}\sffamily\bfseries\large #1%
+    }%
+  }%
+}
+
+\DeclareTOCStyleEntry[
+  entryformat=\formatacaoparte,
+  pagenumberformat={\color{laranjaqueimado}\sffamily\bfseries},
+  linefill={\leavevmode\color{laranjaqueimado}\TOCLineLeaderFill},
+  beforeskip=1.5em
+]{tocline}{part}
+
+
+\DeclareTOCStyleEntry[
+  entryformat={\color{laranjaqueimado}\sffamily},
+  pagenumberformat={\color{laranjaqueimado}\sffamily\bfseries},
+  linefill=\TOCLineLeaderFill
+]{tocline}{chapter}
+
+\DeclareTOCStyleEntry[
+  entryformat={\color{laranjavibrante}\sffamily},
+  pagenumberformat=\sffamily,
+  linefill=\TOCLineLeaderFill
+]{tocline}{section}
+
+\DeclareTOCStyleEntry[
+  entryformat={\color{azul}\sffamily},
+  pagenumberformat=\sffamily
+]{tocline}{subsection}
+
+% =========================
+% CAPÍTULOS
+% =========================
+
+\RedeclareSectionCommand[
+  beforeskip=2.0cm,
+  afterskip=1.0cm
+]{chapter}
+
+% Remove o ponto após o número (padrão KOMA é "1.")
+\renewcommand*{\chapterformat}{\thechapter}
+
+% #2 = número formatado | #3 = título
+% \ifblank: se #2 vazio (cap. não numerado), não exibe a caixa
+\renewcommand*{\chapterlinesformat}[3]{%
+  \noindent
+  \ifblank{#2}{}{%
+    {%
+      \setlength{\fboxsep}{0.45em}%
+      \colorbox{bege}{%
+        \hspace{0.3em}%
+        {\color{white}\bfseries\huge%
+          \rule[-0.25em]{0pt}{1.2em}#2}%
+        \hspace{0.3em}%
+      }%
+    }%
+    \par\vspace{0.7em}%
+  }%
+  {\sffamily\bfseries\Huge\color{laranjaqueimado}#3}%
+  \par
+}
+
+% =========================
+% PARTES
+% =========================
+
+\renewcommand*{\partformat}{\partname~\thepart}
+\renewcommand*{\partpagestyle}{empty}
+
+% \pretocmd: ativa a cor de fundo ANTES da página de parte ser composta.
+% Utiliza o pêssego da nova paleta para um fundo de transição suave.
+\pretocmd{\part}{%
+  \cleardoublepage
+  \pagecolor{pessego}%
+}{}{}
+
+% \partheadendvskip: chamado DENTRO da página de parte, ao final.
+% \afterpage{\nopagecolor} é acionado após a página ser finalizada,
+% restaurando o fundo branco puro para as páginas seguintes.
+\renewcommand*{\partheadstartvskip}{\null\vfill}
+\renewcommand*{\partheadendvskip}{%
+  \vfill\null
+  \afterpage{\nopagecolor}%
+}
+
+% =========================
+% CABEÇALHO
+% =========================
+
+\usepackage{scrlayer-scrpage}
+\clearpairofpagestyles
+
+\automark[section]{chapter}
+
+\ihead{\headmark}
+\ohead{\pagemark}
+
+% Elementos de navegação em azul cobalto garantem sobriedade e leitura eficiente
+\setkomafont{pagehead}{\sffamily\small\color{laranja}}
+\setkomafont{pagenumber}{\sffamily\small\color{laranja}}
+
+\KOMAoptions{headsepline=true}
+% Colorir a linha do cabeçalho
+\addtokomafont{headsepline}{\color{bege}}
+
+% =========================
+% LEGENDAS (Figuras e Tabelas)
+% =========================
+
+% Altera a cor e a fonte do texto da legenda
+\setkomafont{caption}{\sffamily\color{laranjaqueimado}}
+\setcapindent{0em}
+% Altera a cor e a fonte do rótulo ("Figura 1:", "Tabela 1:")
+\setkomafont{captionlabel}{\sffamily\color{laranjaqueimado}}
+
+
+% =========================
+% NOTAS DE RODAPÉ
+% =========================
+
+% Altera a cor do texto da nota de rodapé
+\setkomafont{footnote}{\sffamily\\color{azulcobalto}}
+
+% Altera a cor do número/marcação da nota no rodapé da página
+\setkomafont{footnotelabel}{\sffamily\\color{azulcobalto}}
+
+% Opcional: Altera a cor do número sobrescrito no meio do texto principal
+% \setkomafont{footnotereference}{\color{azulcobalto}}
+
+% =========================
+% FONTE DO CORPO DAS TABELAS
+% =========================
+
+% Injeta \sffamily no início dos principais ambientes de tabela
+\AtBeginEnvironment{table}{\sffamily}
+\AtBeginEnvironment{tabular}{\sffamily}
+\AtBeginEnvironment{tabular*}{\sffamily}
+\AtBeginEnvironment{longtable}{\sffamily}
+
+% =========================
+% CONTROLE DE FONTE EM MINIPAGE (TABELAS)
+% =========================
+
+% 1. Cria a variável de estado lógico (inicia como falsa por padrão)
+\newtoggle{dentrodetabela}
+
+% 2. Altera o estado para verdadeiro ao iniciar um ambiente de tabela
+\AtBeginEnvironment{table}{\toggletrue{dentrodetabela}}
+
+% 3. Injeta a verificação condicional no início de toda minipage
+\AtBeginEnvironment{minipage}{%
+  \iftoggle{dentrodetabela}{\sffamily\small}{}%
+}
+
+% =========================
+% NOTAS MARGINAIS (Integração Quarto)
+% =========================
+
+% 1. Assume o controle sobre as notas geradas por marcações do Quarto (.aside)
+\usepackage{marginnote}
+\renewcommand*{\marginfont}{\small\color{azulcobalto}}
+
+% 2. Mantém a intercepção do comando KOMA-Script para marcações manuais no texto
+\let\oldmarginpar\marginpar
+\renewcommand{\marginpar}[1]{\oldmarginpar{\small\color{azulcobalto}#1}}
+
+\let\oldmarginline\marginline
+\renewcommand{\marginline}[1]{\oldmarginline{\small\color{azulcobalto}#1}}
+\usepackage{booktabs}
+\usepackage{caption}
+\usepackage{longtable}
+\usepackage{colortbl}
+\usepackage{array}
+\usepackage{anyfontsize}
+\usepackage{multirow}
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[skins,breakable]{tcolorbox}}
+\@ifpackageloaded{fontawesome5}{}{\usepackage{fontawesome5}}
+\definecolor{quarto-callout-color}{HTML}{909090}
+\definecolor{quarto-callout-note-color}{HTML}{0758E5}
+\definecolor{quarto-callout-important-color}{HTML}{CC1914}
+\definecolor{quarto-callout-warning-color}{HTML}{EB9113}
+\definecolor{quarto-callout-tip-color}{HTML}{00A047}
+\definecolor{quarto-callout-caution-color}{HTML}{FC5300}
+\definecolor{quarto-callout-color-frame}{HTML}{acacac}
+\definecolor{quarto-callout-note-color-frame}{HTML}{4582ec}
+\definecolor{quarto-callout-important-color-frame}{HTML}{d9534f}
+\definecolor{quarto-callout-warning-color-frame}{HTML}{f0ad4e}
+\definecolor{quarto-callout-tip-color-frame}{HTML}{02b875}
+\definecolor{quarto-callout-caution-color-frame}{HTML}{fd7e14}
+\makeatother
+\makeatletter
+\@ifpackageloaded{bookmark}{}{\usepackage{bookmark}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Índice}
+\else
+  \newcommand\contentsname{Índice}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{Lista de Figuras}
+\else
+  \newcommand\listfigurename{Lista de Figuras}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{Lista de Tabelas}
+\else
+  \newcommand\listtablename{Lista de Tabelas}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figura}
+\else
+  \newcommand\figurename{Figura}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Tabela}
+\else
+  \newcommand\tablename{Tabela}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listagem}
+\newcommand*\listoflistings{\listof{codelisting}{Lista de Listagens}}
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{sidenotes}{}{\usepackage{sidenotes}}
+\@ifpackageloaded{marginnote}{}{\usepackage{marginnote}}
+\makeatother
+\newcounter{quartocallouttipno}
+\newcommand{\quartocallouttip}[1]{\refstepcounter{quartocallouttipno}\label{#1}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Métodos Computacionais para Indicadores Sociais e Políticas Públicas},
+  pdfauthor={Ronaldo Baltar e Cláudia Baltar},
+  pdflang={pt-BR},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+
+\title{Métodos Computacionais para Indicadores Sociais e Políticas
+Públicas}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Usando R}
+\author{Ronaldo Baltar e Cláudia Baltar}
+\date{2026}
+\begin{document}
+\frontmatter
+\maketitle
+
+\renewcommand*\contentsname{Índice}
+{
+\setcounter{tocdepth}{2}
+\tableofcontents
+}
+
+\mainmatter
+\bookmarksetup{startatroot}
+
+\chapter*{Prefácio A}\label{prefuxe1cio-a}
+\addcontentsline{toc}{chapter}{Prefácio A}
+
+\markboth{Prefácio A}{Prefácio A}
+
+Este é o texto do seu prefácio. Note que o comando no seu YAML garantiu
+que a contagem começasse na Falsa Folha de Rosto, mas o impediu que o
+número fosse impresso nas páginas iniciais.
+
+\part{Fundamentos}
+
+\chapter*{Introdução}\label{introduuxe7uxe3o}
+\addcontentsline{toc}{chapter}{Introdução}
+
+\markboth{Introdução}{Introdução}
+
+Este conteúdo digital tem origem no curso online \emph{``Introdução aos
+Indicadores Sociais com o software R''}, de autoria do Prof.~Ronaldo
+Baltar e da Prof.ª Cláudia Siqueira Baltar. Ele foi desenvolvido como
+uma atividade do Projeto de extensão ``Indicadores sociais como subsídio
+para o monitoramento e avaliação das ações dos municípios paranaenses em
+direção à Agenda 2030'', vinculado ao Observatório de Populações e
+Políticas Públicas (ObPPP) e ao projeto de Informática aplicada à
+Pesquisa Social (InfoSoc) da Universidade Estadual de Londrina (UEL).
+
+\section*{Objetivo}\label{objetivo}
+\addcontentsline{toc}{section}{Objetivo}
+
+\markright{Objetivo}
+
+O nosso foco inicial é a instalação e os primeiros passos com o
+\textbf{R}, um software gratuito voltado para a análise de dados, e com
+o \textbf{RStudio}, um ambiente integrado de desenvolvimento (IDE)
+também gratuito. O RStudio oferece diversos recursos práticos para
+facilitar a escrita, a elaboração e a visualização dos códigos que você
+criará utilizando o R.
+
+\section*{Preparando o Ambiente de
+Trabalho}\label{preparando-o-ambiente-de-trabalho}
+\addcontentsline{toc}{section}{Preparando o Ambiente de Trabalho}
+
+\markright{Preparando o Ambiente de Trabalho}
+
+\subsection*{Instalando o R}\label{instalando-o-r}
+\addcontentsline{toc}{subsection}{Instalando o R}
+
+Para realizar a instalação da linguagem R, você deve acessar o site do
+repositório padrão \textbf{CRAN} através do link abaixo:
+
+\url{https://cran.r-project.org}
+
+Ao acessar o site, localize o \emph{link} da versão compatível com o seu
+sistema operacional (Windows, Linux ou MacOS). Baixe o arquivo de
+instalação mais recente e execute-o diretamente no seu computador.
+
+\subsection*{Instalando o RStudio
+(Posit)}\label{instalando-o-rstudio-posit}
+\addcontentsline{toc}{subsection}{Instalando o RStudio (Posit)}
+
+O RStudio é distribuído em duas versões: \emph{Desktop} (desenvolvida
+para uso local em computadores individuais) e \emph{Server} (servidor).
+Ambas estão disponíveis sob licença comercial ou gratuita (\emph{open
+source}) para Linux, Mac e Windows.
+
+Em novembro de 2022, o RStudio mudou sua marca para \textbf{Posit}, mas
+os procedimentos de uso e instalação continuam os mesmos. Lembre-se de
+duas regras fundamentais antes da instalação: 1. O RStudio aceita apenas
+instalação em \textbf{computadores de 64-bit}. 2. Você deve se
+certificar de que \textbf{o R já tenha sido instalado corretamente}
+antes de prosseguir com o RStudio.
+
+O arquivo de instalação da versão Desktop pode ser baixado no seguinte
+endereço: \url{https://posit.co/download/rstudio-desktop/}
+
+Se tiver dificuldades ao longo do processo, você pode acompanhar este
+\href{https://www.iorad.com/player/1815363/Como-instalar-o-R-e-o-RStudio}{Tutorial
+Interativo de Instalação do R e RStudio}.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Sobre a Instalação do RTools (Apenas para Windows)}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+Ao instalar alguns pacotes que utilizam recursos computacionais mais
+avançados (como o \texttt{ggplot2}), eles podem solicitar compilação, ou
+seja, conversão de linguagens como C/C++ ou Fortran. Nesses casos, o R
+pode alertar que existe uma versão em código fonte mais recente do que a
+versão binária pronta para instalação.
+
+\textbf{Não há nenhum problema em ignorar essa mensagem} e continuar
+utilizando a versão binária disponível.
+
+No entanto, se você deseja compilar códigos fontes no seu próprio
+computador e utiliza o sistema Windows, precisará instalar uma
+ferramenta de suporte chamada \textbf{RTools}. O RTools ocupa cerca de
+\textbf{1 GB de espaço no disco rígido} e pode ser baixado em:
+https://cran.r-project.org/bin/windows/Rtools/
+
+\end{tcolorbox}
+
+\chapter{Texto modelo}\label{texto-modelo}
+
+\lettrine{A}{ntes} iria o tableofcontents, mas não vai mais. Vamos ver.
+Lorem class magna sapien duis convallis, convallis bibendum aenean quam.
+Enim porta risus arcu turpis lobortis nisl risus maecenas cubilia
+lobortis! Neque egestas condimentum. Adipiscing libero nisi neque proin
+libero ac ornare; mauris egestas cursus! Condimentum conubia phasellus
+class molestie vehicula, nisl semper nec massa.
+
+Litora class quisque ut porttitor nostra at fames sollicitudin. Vel
+mauris penatibus eu magna facilisis accumsan eleifend lacinia! Leo mi
+vehicula curabitur accumsan ultricies pulvinar placerat? Vitae erat,
+viverra hendrerit curabitur id -- praesent aliquet aenean vestibulum
+praesent mauris. In luctus ridiculus quisque neque auctor vel quis
+dictumst pretium molestie laoreet. A nisl?
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\FunctionTok{source}\NormalTok{(}\StringTok{"tema\_livro.R"}\NormalTok{)}
+\FunctionTok{definir\_tema\_livro}\NormalTok{() }
+
+\NormalTok{mtcars2 }\OtherTok{\textless{}{-}}\NormalTok{ mtcars}
+\NormalTok{mtcars2}\SpecialCharTok{$}\NormalTok{am }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}
+\NormalTok{  mtcars}\SpecialCharTok{$}\NormalTok{am, }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}automatic\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}manual\textquotesingle{}}\NormalTok{)}
+\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(mtcars2, }\FunctionTok{aes}\NormalTok{(hp, mpg, }\AttributeTok{color =}\NormalTok{ am)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{method =} \StringTok{"loess"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{\textquotesingle{}bottom\textquotesingle{}}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{marginfigure}
+
+\centering{
+
+\pandocbounded{\includegraphics[keepaspectratio]{modelo_files/figure-pdf/fig-mtcars-1.png}}
+
+}
+
+\caption{\label{fig-mtcars}MPG vs horsepower, colored by transmission.}
+
+\end{marginfigure}%
+
+Lorem semper aliquam felis enim gravida velit himenaeos purus dis! Ad
+fames massa sodales nisi odio non conubia. Mi ligula pellentesque
+ultrices tristique, turpis mi, metus fringilla. Fames iaculis natoque
+ullamcorper aliquet, vitae inceptos suscipit risus pharetra nascetur
+leo! Faucibus ad duis semper vehicula condimentum in massa? Nisl
+facilisis id magnis convallis varius imperdiet libero duis. Iaculis
+dictumst cum vivamus mollis mattis felis sociis. Consequat viverra
+tristique eleifend accumsan volutpat, arcu, sapien vel fringilla.
+
+Amet sapien ultrices ridiculus ridiculus libero luctus. Posuere purus
+varius proin, ullamcorper auctor natoque imperdiet urna pretium
+vestibulum accumsan, habitasse quam. Pharetra venenatis ridiculus ligula
+quis, purus sed litora platea viverra imperdiet diam. Blandit elementum
+odio id, feugiat cubilia lacinia. Faucibus mus conubia condimentum
+ultricies leo fusce netus sem venenatis nullam.
+
+You an also place tables in the margin of your document by specifying
+column: margin.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
+\NormalTok{  mtcars[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{3}\NormalTok{]}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}lrrr@{}}
+\toprule\noalign{}
+& mpg & cyl & disp \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Mazda RX4 & 21.0 & 6 & 160 \\
+Mazda RX4 Wag & 21.0 & 6 & 160 \\
+Datsun 710 & 22.8 & 4 & 108 \\
+\end{longtable}
+}
+
+Elit magnis aptent morbi aptent conubia cras, ullamcorper velit! Per
+curabitur vivamus fringilla, turpis mus quam cubilia blandit cras nisi.
+Placerat facilisis vitae magnis orci urna porta sollicitudin penatibus.
+Feugiat cursus congue laoreet, malesuada felis, imperdiet justo
+hendrerit. Massa congue felis nam semper blandit ad porttitor interdum
+leo.
+
+You can also place content in the margin by targeting the margin column
+using a div with the .column-margin class. For example:
+
+\marginnote{\begin{footnotesize}
+
+We know from \emph{the first fundamental theorem of calculus} that for
+\(x\) in \([a, b]\):
+
+\[\frac{d}{dx}\left( \int_{a}^{x} f(u)\,du\right)=f(x).\]
+
+\end{footnotesize}}
+
+Consectetur mauris quisque primis, facilisis imperdiet curae posuere.
+Pellentesque a varius velit nibh, rutrum semper cum porta pellentesque!
+Diam conubia magna; nisi vivamus, ultrices magnis a ac eleifend hac
+lobortis congue! Fusce vivamus condimentum sociis iaculis magna luctus
+neque. In ac est; eget tristique orci cursus rutrum scelerisque.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{mtcars[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{5}\NormalTok{] }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{gt}\NormalTok{(}\AttributeTok{rownames\_to\_stub =} \ConstantTok{TRUE}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{tab\_header}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"Tabela 1 {-} Desempenho de Veículos Selecionados"}\NormalTok{,}
+    \AttributeTok{subtitle =} \StringTok{"Consumo, número de cilindros e deslocamento volumétrico"}
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{tab\_source\_note}\NormalTok{(}
+    \AttributeTok{source\_note =} \StringTok{"Fonte: Motor Trend Car Road Tests (1974)."}
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{tab\_footnote}\NormalTok{(}
+    \AttributeTok{footnote =} \StringTok{"Milhas por galão norte{-}americano."}\NormalTok{,}
+    \AttributeTok{locations =} \FunctionTok{cells\_column\_labels}\NormalTok{(}\AttributeTok{columns =}\NormalTok{ mpg)}
+\NormalTok{  ) }\SpecialCharTok{|\textgreater{}}
+  \FunctionTok{tema\_tabela\_livro}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\caption*{
+{\fontsize{10}{13}\selectfont  Tabela 1 - Desempenho de Veículos Selecionados\fontsize{9}{11}\selectfont } \\ 
+{\fontsize{9}{11}\selectfont  Consumo, número de cilindros e deslocamento volumétrico\fontsize{9}{11}\selectfont }
+} 
+\fontsize{9.0pt}{11.0pt}\selectfont
+\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}l|rrrrr}
+\toprule
+ & mpg\textsuperscript{\textit{1}} & cyl & disp & hp & drat \\ 
+\midrule\addlinespace[2.5pt]
+Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 \\ 
+Mazda RX4 Wag & 21.0 & 6 & 160 & 110 & 3.90 \\ 
+Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 \\ 
+Hornet 4 Drive & 21.4 & 6 & 258 & 110 & 3.08 \\ 
+Hornet Sportabout & 18.7 & 8 & 360 & 175 & 3.15 \\ 
+Valiant & 18.1 & 6 & 225 & 105 & 2.76 \\ 
+\bottomrule
+\end{tabular*}
+\begin{minipage}{\linewidth}
+\vspace{.05em}
+{\fontsize{9}{11}\selectfont \textcolor[HTML]{0047AB}{\textsuperscript{\textit{1}}Milhas por galão norte-americano.}}\\
+{\fontsize{9}{11}\selectfont \textcolor[HTML]{0047AB}{Fonte: Motor Trend Car Road Tests (1974).\\
+}}\end{minipage}
+\end{table}
+
+Consectetur ac quam penatibus ac arcu, imperdiet consequat scelerisque
+nisl commodo nisi? Magna dictumst quam purus, cursus egestas luctus
+posuere hendrerit. Facilisis auctor platea, tempus interdum nunc natoque
+senectus tempus, justo diam etiam malesuada dui? Cursus eros eget
+facilisis class, porta sapien praesent dictumst. Elementum rutrum rutrum
+ut auctor ante felis: maecenas posuere vivamus lectus leo? Natoque odio!
+
+Asides allow you to place content aside from the content it is placed
+in. Asides look like footnotes, but do not include the footnote mark
+(the superscript number).
+
+{\marginnote{\begin{footnotesize}This is a span that has the class aside
+which places it in the margin without a footnote
+number.\end{footnotesize}}}
+
+Consectetur sociis leo neque placerat turpis conubia non rutrum magnis
+ligula vulputate nisl dignissim. Diam id libero laoreet, gravida fames
+pellentesque.
+
+For figures and tables, you may leave the content in the body of the
+document while placing the caption in the margin of the document. Using
+cap-location: margin in a code cell or document front matter to control
+this. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\NormalTok{mtcars2 }\OtherTok{\textless{}{-}}\NormalTok{ mtcars}
+\NormalTok{mtcars2}\SpecialCharTok{$}\NormalTok{am }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}
+\NormalTok{  mtcars}\SpecialCharTok{$}\NormalTok{am, }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}automatic\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}manual\textquotesingle{}}\NormalTok{)}
+\NormalTok{)}
+\FunctionTok{ggplot}\NormalTok{(mtcars2, }\FunctionTok{aes}\NormalTok{(hp, mpg, }\AttributeTok{color =}\NormalTok{ am)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{method =} \StringTok{"loess"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{\textquotesingle{}bottom\textquotesingle{}}\NormalTok{) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}[H]
+
+{\centering \pandocbounded{\includegraphics[keepaspectratio]{modelo_files/figure-pdf/unnamed-chunk-3-1.png}}
+
+}
+
+\caption{MPG vs horsepower, colored by transmission.}
+
+\end{figure}%
+
+Consectetur blandit pellentesque arcu praesent tortor cras enim.
+Pellentesque sem suspendisse dis, vulputate egestas nulla at commodo
+fermentum ante, curabitur rutrum? Feugiat ultrices fermentum tristique
+interdum tincidunt eleifend tempus massa turpis mollis. Metus arcu
+magnis mauris vitae fermentum, arcu magna orci sem. Nulla torquent
+dictum proin.
+
+Amet aliquet rhoncus volutpat auctor placerat lectus, curabitur:
+venenatis non ultricies. Condimentum ac vitae netus, massa fringilla
+volutpat nascetur, risus nisi. Hendrerit lobortis libero massa senectus
+tristique, sodales nullam potenti mi quam? Aliquet potenti imperdiet
+pharetra volutpat taciti arcu. Hac commodo non duis in curae: hendrerit
+suscipit, netus blandit vivamus venenatis sapien fusce dapibus sagittis.
+
+For computational output, you can specify the page column in your code
+cell options. For example:
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(}
+\NormalTok{  mtcars[}\DecValTok{1}\SpecialCharTok{:}\DecValTok{6}\NormalTok{, }\DecValTok{1}\SpecialCharTok{:}\DecValTok{10}\NormalTok{]}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table*}
+
+\begin{tabular}{lrrrrrrrrrr}
+\toprule
+ & mpg & cyl & disp & hp & drat & wt & qsec & vs & am & gear\\
+\midrule
+Mazda RX4 & 21.0 & 6 & 160 & 110 & 3.90 & 2.620 & 16.46 & 0 & 1 & 4\\
+Mazda RX4
+Wag & 21.0 & 6 & 160 & 110 & 3.90 & 2.875 & 17.02 & 0 & 1 & 4\\
+Datsun 710 & 22.8 & 4 & 108 & 93 & 3.85 & 2.320 & 18.61 & 1 & 1 & 4\\
+Hornet 4
+Drive & 21.4 & 6 & 258 & 110 & 3.08 & 3.215 & 19.44 & 1 & 0 & 3\\
+Hornet
+Sportabout & 18.7 & 8 & 360 & 175 & 3.15 & 3.440 & 17.02 & 0 & 0 & 3\\
+Valiant & 18.1 & 6 & 225 & 105 & 2.76 & 3.460 & 20.22 & 1 & 0 & 3\\
+\bottomrule
+\end{tabular}
+
+\end{table*}%
+
+Ipsum ligula a, euismod habitasse imperdiet dui dui purus dictumst. Sem
+vitae sapien pharetra at lacus fringilla praesent, risus gravida
+faucibus. At orci dictum consequat aliquet tempus aenean, cubilia,
+ultricies potenti quisque sapien lectus quis.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, breakable, colback=white, colframe=quarto-callout-note-color-frame, left=2mm, leftrule=.75mm, opacityback=0, rightrule=.15mm, toprule=.15mm]
+\begin{minipage}[t]{5.5mm}
+\textcolor{quarto-callout-note-color}{\faInfo}
+\end{minipage}%
+\begin{minipage}[t]{\textwidth - 5.5mm}
+
+\vspace{-3mm}\textbf{Pay Attention}\vspace{3mm}
+
+Using callouts is an effective way to highlight content that your reader
+give special consideration or attention.
+
+\end{minipage}%
+\end{tcolorbox}
+
+Adipiscing mollis ante dapibus, est pretium auctor molestie hac, natoque
+aliquet dis cum. Dictumst dictum rutrum, habitant condimentum dignissim
+vehicula semper, tristique habitasse ornare volutpat! Ante dis varius
+faucibus rhoncus cubilia odio nisl. Tincidunt orci dui ultrices ad
+sodales, aenean et laoreet. Vehicula fringilla, ut lectus fringilla,
+dignissim nam cubilia convallis elementum. Habitasse nisi integer, vitae
+mi aliquam molestie eleifend at.
+
+To cross-reference a callout, add an ID attribute that starts with the
+appropriate callout prefix (see Table 1). You can then reference the
+callout using the usual @ syntax. For example, here we add the ID
+\#tip-example to the callout, and then refer back to it:
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-tip-color!10!white, colframe=quarto-callout-tip-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-tip-color}{\faLightbulb}\hspace{0.5em}{Dica \ref*{tip-example}: Cross-Referencing a Tip}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+\quartocallouttip{tip-example} 
+
+Add an ID starting with \texttt{\#tip-} to reference a tip.
+
+\end{tcolorbox}
+
+See Tip~\ref{tip-example}\ldots{}
+
+This renders as follows:
+
+Lorem porttitor phasellus sem eget, dictum pellentesque iaculis ligula
+pellentesque litora! Netus lobortis id faucibus aenean etiam faucibus
+gravida quis potenti accumsan. Mus litora molestie, pulvinar tempus
+proin pharetra!
+
+Consectetur placerat sollicitudin vivamus feugiat purus conubia -- eu
+arcu nec taciti. Lectus sociis, tortor etiam, arcu dui; venenatis rutrum
+vivamus! Torquent magna sapien; in magnis, morbi in, habitant quisque
+interdum mauris. Ultricies fusce primis laoreet taciti sollicitudin
+penatibus platea montes, primis interdum. Sagittis laoreet lacinia;
+integer nullam purus etiam fusce!
+
+\section{Sublorem}\label{sublorem}
+
+Sit varius leo bibendum ante: elementum nisi per -- luctus aliquet
+morbi. Bibendum nam nibh: ante: placerat mauris, urna habitasse ante
+ornare penatibus eros. Suscipit taciti mus proin -- porta cum egestas
+pharetra integer hendrerit? Tristique vehicula rutrum: vitae proin
+semper magnis?
+
+Elit nisi class\index{class} parturient sodales! Ultrices cubilia morbi
+condimentum mus molestie habitasse nostra lacus molestie. Ad vitae
+litora metus euismod suspendisse at sodales mi urna taciti pulvinar.
+Bibendum ante dignissim netus donec commodo -- orci dis morbi tempor
+parturient?
+
+\subsection{Sub sub lorem}\label{sub-sub-lorem}
+
+Consectetur curabitur et cubilia scelerisque id enim id aliquet, lacinia
+venenatis justo facilisi? Inceptos netus taciti sodales turpis habitant:
+nam himenaeos cras magna. Nullam parturient mus arcu platea sodales
+pulvinar. Venenatis sem eros facilisis conubia aenean; aenean netus
+facilisi. Scelerisque eros mauris libero hac consequat facilisi ornare
+non sociis orci sollicitudin! Commodo hac aliquam duis, fermentum quis
+cursus odio lacus montes odio commodo, tortor natoque consequat mi
+eleifend porta!
+
+Dolor et quisque habitant placerat bibendum risus; maecenas sem id
+massa. Morbi vehicula sollicitudin rhoncus tincidunt, neque aliquet
+tincidunt suspendisse. Pellentesque sociosqu mus scelerisque; bibendum
+dis litora! Aliquam purus proin semper magna turpis; semper netus
+vestibulum cras dapibus. Commodo\index{Commodo} condimentum inceptos
+senectus.
+
+Ipsum placerat pellentesque praesent lacus, convallis ultricies inceptos
+fringilla lacinia tortor in integer! Aliquet fames penatibus justo
+gravida, venenatis per ligula ullamcorper vestibulum fringilla sem. Non
+vehicula curae pellentesque, dignissim, primis pellentesque tristique
+accumsan dignissim tempus ridiculus. Turpis in porta eu vulputate.
+Scelerisque leo mus: leo, penatibus tempor sodales inceptos maecenas.
+Aptent est sodales in, sodales inceptos enim? Consequat sed erat odio
+orci praesent morbi conubia: faucibus habitant parturient dapibus aenean
+auctor lacus a!
+
+Elit at massa tristique, enim bibendum suscipit et per libero. Duis
+feugiat nullam morbi diam dignissim a commodo iaculis dictum rutrum! Vel
+etiam libero: mauris lectus sollicitudin ultrices eu convallis ligula
+nullam nisl blandit nullam.
+
+\chapter{Introdução aos Indicadores Sociais e a Agenda
+2030}\label{introduuxe7uxe3o-aos-indicadores-sociais-e-a-agenda-2030}
+
+A análise de dados em ciências sociais e a formulação de políticas
+públicas exigem métricas precisas e reprodutíveis. Este manual introduz
+o desenvolvimento e a análise de indicadores sociais como recursos
+fundamentais para o planejamento governamental e a atuação de
+organizações não governamentais.
+
+O acompanhamento rigoroso das condições de vida da população ganha
+especial relevância no contexto da \textbf{Agenda 2030} e dos Objetivos
+de Desenvolvimento Sustentável (ODS). O monitoramento local -- ao nível
+municipal -- das metas da Agenda 2030 requer ferramentas analíticas
+capazes de processar grandes volumes de dados de maneira transparente e
+auditávegil.
+
+\section{Validade, Fidedignidade e a Natureza dos
+Indicadores}\label{validade-fidedignidade-e-a-natureza-dos-indicadores}
+
+Um indicador social não é um dado bruto, mas uma construção metodológica
+projetada para captar fenômenos sociais complexos, como pobreza,
+educação e desigualdade. Para que um indicador seja útil à formulação de
+políticas públicas, ele deve atender a dois critérios metodológicos
+centrais:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{Validade}: A capacidade do indicador de medir exatamente o
+  fenômeno sociológico ou econômico a que se propõe.
+\item
+  \textbf{Fidedignidade (Confiabilidade)}: A consistência da métrica. O
+  indicador deve apresentar estabilidade quando aplicado repetidas vezes
+  sob as mesmas condições.
+\end{enumerate}
+
+Um dos exemplos mais consolidados dessa estruturação é o \textbf{Índice
+de Desenvolvimento Humano (IDH)}. No Brasil, a adaptação metodológica
+deste índice para a escala municipal (IDHM) é fruto da parceria entre o
+Programa das Nações Unidas para o Desenvolvimento (PNUD), a Fundação
+João Pinheiro (FJP) e o Instituto de Pesquisa Econômica Aplicada (Ipea),
+materializada no Atlas Brasil. O Atlas disponibiliza mais de 200
+indicadores sociais baseados nos dados dos Censos Demográficos do IBGE
+(1991, 2000 e 2010).
+
+Em termos formais, índices compostos frequentemente recorrem a
+normalizações e médias ponderadas ou geométricas. A formulação
+matemática clássica para agregação de subíndices de desenvolvimento pode
+ser expressa em LaTeX da seguinte forma:
+
+\[ 
+IDH = \sqrt{I_{renda} \times I_{educacao} \times I_{longevidade}} 
+\]
+
+\chapter{O Paradigma Computacional: Por que usar o
+R?}\label{o-paradigma-computacional-por-que-usar-o-r}
+
+A transição de pacotes estatísticos clássicos para linguagens de
+programação abertas representa um salto metodológico na pesquisa social.
+
+\section{Interfaces de Apontar e Clicar vs.~Linguagens de
+Script}\label{interfaces-de-apontar-e-clicar-vs.-linguagens-de-script}
+
+Softwares tradicionais como o SPSS, desenvolvidos entre o final da
+década de 1960 e o início dos anos 1970, popularizaram a análise de
+dados por meio de interfaces de ``apontar e clicar''
+(\emph{point-and-click}). Embora versáteis e fundamentais para a
+história da pesquisa quantitativa, essas ferramentas limitam o
+pesquisador às opções preestabelecidas nos menus do programa. Essa
+limitação equivale a ``desenhar seguindo um tracejado'' imposto pelo
+software.
+
+Em contrapartida, o \textbf{R} é uma linguagem de programação
+fundamentada na escrita de \emph{scripts} (roteiros de códigos
+documentados). Desenvolvido inicialmente como um derivado de código
+aberto da linguagem S (S-Plus), o R foi concebido para ser interativo. O
+uso de \emph{scripts} libera o potencial analítico e criativo do
+pesquisador, permitindo o desenvolvimento de novas rotinas, modelagens
+complexas e, sobretudo, garantindo a \textbf{reprodutibilidade} da
+pesquisa.
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-important-color!10!white, colframe=quarto-callout-important-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-important-color}{\faExclamation}\hspace{0.5em}{Reprodutibilidade como Princípio Ético}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+Na análise de políticas públicas com dados do IBGE ou do Atlas Brasil, o
+uso de \emph{scripts} em R garante que qualquer cidadão ou auditor possa
+executar o mesmo código e chegar exatamente aos mesmos resultados,
+configurando um pilar de transparência governamental.
+
+\end{tcolorbox}
+
+\section{A Comunidade e o Ecossistema Open
+Source}\label{a-comunidade-e-o-ecossistema-open-source}
+
+O R não é apenas um software, mas um ecossistema sustentado por uma
+comunidade global altamente colaborativa. A arquitetura da linguagem
+baseia-se em bibliotecas, geridas pela rede CRAN (\emph{Comprehensive R
+Archive Network}). Atualmente, existem mais de 18.000 pacotes que
+expandem as capacidades do programa para mineração de dados,
+visualização gráfica, e aprendizado de máquina, rivalizando
+positivamente com linguagens genéricas como o Python.
+
+\chapter{Ambiente de Desenvolvimento: R e
+RStudio}\label{ambiente-de-desenvolvimento-r-e-rstudio}
+
+Para operar a linguagem, adotamos o \textbf{RStudio} (produto da empresa
+\emph{Posit}), um Ambiente de Desenvolvimento Integrado (IDE) projetado
+especificamente para maximizar a produtividade no R.
+
+\section{Estrutura do RStudio}\label{estrutura-do-rstudio}
+
+A interface do RStudio é classicamente dividida em quatro painéis: 1.
+\textbf{Source / Editor de Script}: Área destinada à escrita, depuração
+e documentação do código-fonte. 2. \textbf{Console}: O motor do R em si,
+que aguarda os comandos interativos e exibe saídas numéricas e de texto.
+3. \textbf{Environment}: O ambiente de trabalho, que lista as bases de
+dados carregadas em memória, os objetos criados e o histórico de
+execuções. 4. \textbf{Files / Plots / Packages / Help}: Painel
+utilitário que gerencia o diretório de trabalho, exibe gráficos gerados,
+lista pacotes e provê documentação.
+
+\section{Processo de Instalação}\label{processo-de-instalauxe7uxe3o}
+
+A configuração do ambiente exige a instalação sequencial de duas
+plataformas:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  \textbf{R (Linguagem)}: Baixado através do repositório oficial CRAN
+  (\texttt{https://cran.r-project.org}). Deve ser instalado antes da
+  interface gráfica.
+\item
+  \textbf{RStudio (IDE)}: Disponível no site da Posit
+  (\texttt{https://posit.co/download/rstudio-desktop/}). A versão
+  Desktop \emph{Open Source} requer um sistema operacional de 64-bits
+  (Windows, Mac ou Linux).
+\end{enumerate}
+
+\begin{tcolorbox}[enhanced jigsaw, arc=.35mm, bottomrule=.15mm, bottomtitle=1mm, breakable, colback=white, colbacktitle=quarto-callout-note-color!10!white, colframe=quarto-callout-note-color-frame, coltitle=black, left=2mm, leftrule=.75mm, opacityback=0, opacitybacktitle=0.6, rightrule=.15mm, title=\textcolor{quarto-callout-note-color}{\faInfo}\hspace{0.5em}{Compilação e RTools (Usuários de Windows)}, titlerule=0mm, toprule=.15mm, toptitle=1mm]
+
+Alguns pacotes avançados (como certas dependências metodológicas) podem
+requerer compilação do código-fonte, escrito em C/C++ ou Fortran. Para
+usuários do sistema Windows, é necessário instalar adicionalmente o
+\textbf{RTools} (disponível no CRAN). Este utilitário consome cerca de 1
+GB de armazenamento. No entanto, rotinas básicas permitem ignorar o
+aviso de compilação utilizando os arquivos binários já disponíveis.
+
+\end{tcolorbox}
+
+\chapter{Operações Básicas e Fluxos de Trabalho
+Modernos}\label{operauxe7uxf5es-buxe1sicas-e-fluxos-de-trabalho-modernos}
+
+Abaixo, apresentamos uma demonstração da sintaxe do \emph{Tidyverse}
+moderno, utilizando o operador \emph{pipe} nativo do R
+(\texttt{\textbar{}\textgreater{}}), para estruturar um processamento
+hipotético dos dados do ``Atlas Brasil'' aplicados ao controle social.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\CommentTok{\# Carregamento de bibliotecas para manipulação de dados}
+\FunctionTok{library}\NormalTok{(dplyr)}
+\FunctionTok{library}\NormalTok{(readr)}
+
+\CommentTok{\# Exemplo conceitual: Importação e filtragem de Indicadores Municipais}
+\CommentTok{\# O foco recai na avaliação da agenda 2030 via IDHM (Atlas Brasil)}
+\NormalTok{dados\_atlas\_brasil }\OtherTok{\textless{}{-}} \FunctionTok{read\_csv}\NormalTok{(}\StringTok{"caminho/para/dados\_atlas.csv"}\NormalTok{)}
+
+\CommentTok{\# Processamento moderno utilizando o pipe nativo do R ( |\textgreater{} )}
+\NormalTok{indicadores\_prioritarios }\OtherTok{\textless{}{-}}\NormalTok{ dados\_atlas\_brasil }\SpecialCharTok{|\textgreater{}}
+  \CommentTok{\# Filtra municípios com dados consolidados para o ano do censo de 2010}
+  \FunctionTok{filter}\NormalTok{(ano }\SpecialCharTok{==} \DecValTok{2010}\NormalTok{) }\SpecialCharTok{|\textgreater{}}
+  \CommentTok{\# Seleciona variáveis de interesse socioeconômico}
+  \FunctionTok{select}\NormalTok{(cod\_ibge, nome\_municipio, idhm, idhm\_renda, idhm\_educacao) }\SpecialCharTok{|\textgreater{}}
+  \CommentTok{\# Ordena de forma decrescente pelo índice principal}
+  \FunctionTok{arrange}\NormalTok{(}\FunctionTok{desc}\NormalTok{(idhm))}
+
+\CommentTok{\# Visualização no console (limitação a 5 registros)}
+\FunctionTok{head}\NormalTok{(indicadores\_prioritarios, }\DecValTok{5}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+O uso metodológico de \emph{scripts} devidamente anotados não apenas
+agiliza o trabalho do analista, mas garante que prefeituras e
+pesquisadores possam reavaliar políticas sociais de forma consistente ao
+longo do tempo.
+
+\part{Referências}
+
+\chapter*{References}\label{references}
+\addcontentsline{toc}{chapter}{References}
+
+\markboth{References}{References}
+
+\protect\phantomsection\label{refs}
+
+\chapter*{Sobre os autores}\label{sobre-os-autores}
+\addcontentsline{toc}{chapter}{Sobre os autores}
+
+\markboth{Sobre os autores}{Sobre os autores}
+
+\begin{description}
+\tightlist
+\item[Ronaldo Baltar]
+é sociólogo formado em 1985 pela Universidade de Brasília. No mesmo
+período, concluiu curso técnico de programação de computadores e mantém
+um aperfeiçoamento contínuo, sobretudo em linguagens e métodos de
+análise de dados. Concluiu o mestrado em 1990 em Sociologia pela
+Universidade Estadual de Campinas e em 1996, defendeu o Doutorado em
+Sociologia, na Universidade de São Paulo. Desde então vem desenvolvendo
+pesquisas, publicando artigos e ministrando cursos sobre análise
+computacional de dados para a pesquisa aplicada em ciências sociais.
+Atuou em diversos projetos de análise e avaliação de políticas públicas
+e programas sociais. Atualmente é professor do Departamento de Ciências
+Sociais da Universidade Estadual de Londrina, onde coordena o projeto
+InfoSoc para formação complementar de graduação em informática aplicada
+à pesquisa social, e participa como pesquisador do projeto Populações e
+Dinâmica Social (\url{https://populacoes.info}).
+\item[Cláudia Siqueira Baltar]
+é demógrafa e professora do Departamento de Ciências Sociais da
+Universidade Estadual de Londrina. Graduou-se em ciências Sociais em
+2000 na Universidade de São Paulo. Concluiu o Mestrado em Ciência
+Política na Universidade de Campinas em 2004 e defendeu tese de
+Doutorado em 2008 no Programa de Pós-Graduação em Demografia da
+Universidade de Campinas. Foi pesquisadora bolsista do Núcleo de Estudos
+de População -- NEPO, na Universidade de Campinas. Atualmente é
+coordenadora do projeto Populações e Dinâmica Social na Universidade
+Estadual de Londrina (\url{https://populacoes.info}).
+\end{description}
+
+
+\backmatter
+
+
+\end{document}

@@ -29,7 +29,7 @@ book:
 
 format:
   html:
-    theme: [simplex, custom.scss]
+    theme: [cosmo, iiscr.scss]
     highlight-style: infosoc_hilightcode.theme
     code-copy: true
 
