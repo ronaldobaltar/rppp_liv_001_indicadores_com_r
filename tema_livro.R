@@ -243,7 +243,7 @@ definir_tema_livro <- function(familia_fonte = "Fira Sans", tamanho_base = 10) {
   ))
   ggplot2::update_geom_defaults("smooth", list(
     color = cores_livro$bege,
-    fill  = "#eaacb0" #pêssego avermelhado mais claro
+    fill  = "#CCC0BCED" #Cor mais clara ccc4bcff
   ))
   ggplot2::update_geom_defaults("text", list(
     color  = cores_livro$texto_escuro,
