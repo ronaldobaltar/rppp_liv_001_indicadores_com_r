@@ -181,11 +181,11 @@ theme_livro <- function(base_size = 10, base_family = "Fira Sans") {
     legend.title      = ggplot2::element_text(
       color = cores_livro$texto_escuro,
       face  = "bold",
-      size  = ggplot2::rel(0.85)
+      size  = ggplot2::rel(0.95)
     ),
     legend.text       = ggplot2::element_text(
       color = cores_livro$texto_escuro,
-      size  = ggplot2::rel(0.85)
+      size  = ggplot2::rel(0.95)
     ),
     legend.key.size   = ggplot2::unit(0.5, "lines"),
     
@@ -194,7 +194,7 @@ theme_livro <- function(base_size = 10, base_family = "Fira Sans") {
     strip.text = ggplot2::element_text(
       color  = cores_livro$laranja_queimado,
       face   = "bold",
-      size   = ggplot2::rel(0.90),
+      size   = ggplot2::rel(0.95),
       margin = ggplot2::margin(b = half)
     ),
     
@@ -242,8 +242,8 @@ definir_tema_livro <- function(familia_fonte = "Fira Sans", tamanho_base = 10) {
     color = NA
   ))
   ggplot2::update_geom_defaults("smooth", list(
-    color = cores_livro$ciano,
-    fill  = cores_livro$bege
+    color = cores_livro$bege,
+    fill  = "#eaacb0" #pêssego avermelhado mais claro
   ))
   ggplot2::update_geom_defaults("text", list(
     color  = cores_livro$texto_escuro,
