@@ -30,7 +30,7 @@ book:
 format:
   html:
     theme: [cosmo, iiscr.scss]
-    highlight-style: infosoc_hilightcode.theme
+    highlight-style: iiscr_hilightcode.theme
     code-copy: true
 
   pdf:
@@ -45,7 +45,7 @@ format:
     sansfont: "Fira Sans"
     monofont: "Fira Mono"
     mathfont: "Fira Math" 
-    highlight-style: infosoc_hilightcode.theme
+    highlight-style: iiscr_hilightcode.theme
     code-line-numbers: true
     biblio-method: biblatex
     biblio-style: abnt
@@ -67,9 +67,9 @@ format:
   
   epub: 
     toc: true 
-    cover-image: capa_ebook_tons_laranja_creme_azul.png 
-    highlight-style: infosoc_hilightcode.theme
-    css: epub-styles.css
+    cover-image: iiscr_ebook_fk_cover.png 
+    highlight-style: iiscr_hilightcode.theme
+    css: iiscr_epub_styles.css
     
 bibliography: references.bib
 csl: abnt.csl          # ABNT para todos os formatos   
