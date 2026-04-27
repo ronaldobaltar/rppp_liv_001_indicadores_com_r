@@ -134,7 +134,7 @@ theme_livro <- function(base_size = 10, base_family = "Fira Sans") {
     
     # ----- Grade Minimalista -----
     # Apenas linhas maiores em bege muito suave
-    panel.grid.major = ggplot2::element_line(color = cores_livro$creme, linewidth = 0.4),
+    panel.grid.major = ggplot2::element_blank(),
     panel.grid.minor = ggplot2::element_blank(),
     
     # ----- Eixos -----
@@ -243,7 +243,7 @@ definir_tema_livro <- function(familia_fonte = "Fira Sans", tamanho_base = 10) {
   ))
   ggplot2::update_geom_defaults("smooth", list(
     color = cores_livro$bege,
-    fill  = "#CCC0BCED" #Cor mais clara ccc4bcff
+    fill  = "#c9c0bdd5" #Cor menos transparente CCC0BCED
   ))
   ggplot2::update_geom_defaults("text", list(
     color  = cores_livro$texto_escuro,
@@ -297,7 +297,7 @@ tema_tabela_livro <- function(data) {
       # source_notes.font.size = px(9)
       # Estrutura e alinhamento do cabeçalho
       heading.align = "left",
-      heading.background.color = cor_bege,
+      heading.background.color = "transparent",
       heading.border.bottom.color = "transparent",
       
       # Linhas horizontais externas
