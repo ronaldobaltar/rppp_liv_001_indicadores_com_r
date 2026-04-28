@@ -166,7 +166,7 @@ theme_livro <- function(base_size = 10, base_family = "Fira Sans") {
       margin = ggplot2::margin(b = half)
     ),
     plot.caption = ggplot2::element_text(
-      color  = cores_livro$bege, # Tom discreto para notas
+      color  = cores_livro$azul_cobalto, 
       size   = ggplot2::rel(0.75),
       hjust  = 1,
       margin = ggplot2::margin(t = half)

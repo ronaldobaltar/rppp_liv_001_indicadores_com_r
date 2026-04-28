@@ -19,7 +19,7 @@ Litora class quisque ut porttitor nostra at fames sollicitudin. Vel mauris penat
 #| column: margin
 
 library(ggplot2)
-source("tema_livro.R")
+source("iiscr_ggplot_gt_themes.R")
 definir_tema_livro() 
 
 mtcars2 <- mtcars
@@ -117,17 +117,22 @@ gravida fames pellentesque.
 For figures and tables, you may leave the content in the body of the document while placing the caption in the margin of the document. Using cap-location: margin in a code cell or document front matter to control this. For example:
 
 ```{r}
-#| fig-cap: "MPG vs horsepower, colored by transmission."
 
 library(ggplot2)
 mtcars2 <- mtcars
 mtcars2$am <- factor(
   mtcars$am, labels = c('automatic', 'manual')
-)
+  )
+
 ggplot(mtcars2, aes(hp, mpg, color = am)) +
   geom_smooth(formula = y ~ x, method = "loess") +
   geom_point() +
-  theme(legend.position = 'bottom') 
+  theme(legend.position = 'bottom') +
+  labs(
+    title = "MPG versus horsepower by transmition",
+    caption = "Fonte: MTcars package"
+    )
+
 ```
 
 Consectetur blandit pellentesque arcu praesent tortor cras
