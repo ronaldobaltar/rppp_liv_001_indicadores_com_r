@@ -620,7 +620,7 @@ dictumst pretium molestie laoreet. A nisl?
 \begin{Shaded}
 \begin{Highlighting}[numbers=left,,]
 \FunctionTok{library}\NormalTok{(ggplot2)}
-\FunctionTok{source}\NormalTok{(}\StringTok{"tema\_livro.R"}\NormalTok{)}
+\FunctionTok{source}\NormalTok{(}\StringTok{"iiscr\_ggplot\_gt\_themes.R"}\NormalTok{)}
 \FunctionTok{definir\_tema\_livro}\NormalTok{() }
 
 \NormalTok{mtcars2 }\OtherTok{\textless{}{-}}\NormalTok{ mtcars}
@@ -786,23 +786,20 @@ this. For example:
 \NormalTok{mtcars2 }\OtherTok{\textless{}{-}}\NormalTok{ mtcars}
 \NormalTok{mtcars2}\SpecialCharTok{$}\NormalTok{am }\OtherTok{\textless{}{-}} \FunctionTok{factor}\NormalTok{(}
 \NormalTok{  mtcars}\SpecialCharTok{$}\NormalTok{am, }\AttributeTok{labels =} \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}automatic\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}manual\textquotesingle{}}\NormalTok{)}
-\NormalTok{)}
+\NormalTok{  )}
+
 \FunctionTok{ggplot}\NormalTok{(mtcars2, }\FunctionTok{aes}\NormalTok{(hp, mpg, }\AttributeTok{color =}\NormalTok{ am)) }\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{formula =}\NormalTok{ y }\SpecialCharTok{\textasciitilde{}}\NormalTok{ x, }\AttributeTok{method =} \StringTok{"loess"}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{\textquotesingle{}bottom\textquotesingle{}}\NormalTok{) }
+  \FunctionTok{theme}\NormalTok{(}\AttributeTok{legend.position =} \StringTok{\textquotesingle{}bottom\textquotesingle{}}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"MPG versus horsepower by transmition"}\NormalTok{,}
+    \AttributeTok{caption =} \StringTok{"Fonte: MTcars package"}
+\NormalTok{    )}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{figure}[H]
-
-{\centering \pandocbounded{\includegraphics[keepaspectratio]{modelo_files/figure-pdf/unnamed-chunk-3-1.png}}
-
-}
-
-\caption{MPG vs horsepower, colored by transmission.}
-
-\end{figure}%
+\pandocbounded{\includegraphics[keepaspectratio]{modelo_files/figure-pdf/unnamed-chunk-3-1.png}}
 
 Consectetur blandit pellentesque arcu praesent tortor cras enim.
 Pellentesque sem suspendisse dis, vulputate egestas nulla at commodo
