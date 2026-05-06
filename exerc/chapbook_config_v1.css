@@ -1,0 +1,170 @@
+
+element.style {
+    --dark-backdrop-color: hsl(0, 0%, 10%);
+    --dark-page-footer-border: 1px solid white;
+    --dark-page-footer-box-shadow: none;
+    --dark-page-footer-link-active-background-color: var(--color-raspberry-6);
+    --dark-page-footer-link-active-color: var(--color-raspberry-3);
+    --dark-page-fork-divider-background-color: inherit;
+    --dark-page-fork-divider-color: var(--color-gray-5);
+    --dark-page-background-color: var(--color-gray-6);
+    --dark-page-color: white;
+    --dark-page-header-border: 1px solid white;
+    --dark-page-header-box-shadow: none;
+    --dark-page-header-link-active-background-color: var(--color-raspberry-6);
+    --dark-page-header-link-active-color: var(--color-raspberry-3);
+    --dark-page-link-background-color: inherit;
+    --dark-page-link-color: white;
+    --dark-page-link-text-decoration-color: var(--color-raspberry-4);
+    --dark-page-link-active-background-color: var(--color-raspberry-6);
+    --dark-page-link-active-color: var(--color-raspberry-3);
+    --backdrop-color: var(--color-red-1);
+    --page-border: none;
+    --page-box-shadow: inset 0 0 2px 2px hsla(0, 0%, 100%, 0.05), 0 0 0 1px hsla(0, 0%, 0%, 0.05), 0 2px 2px hsla(0, 0%, 0%, 0.05), 0 4px 4px hsla(0, 0%, 0%, 0.05), 0 8px 8px hsla(0, 0%, 0%, 0.05), 0 16px 16px hsla(0, 0%, 0%, 0.05);
+    --page-font-family: "Syne", sans-serif;
+    --page-font-size: calc(18px + max(6 * (100vw - 1000px) / 1000, 0px));
+    --page-font-style: inherit;
+    --page-font-variant: inherit;
+    --page-font-weight: inherit;
+    --page-text-decoration: inherit;
+    --page-text-transform: inherit;
+    --page-background-color: var(--color-blue-1);
+    --page-color: var(--color-blue-6);
+    --page-fork-divider-background-color: inherit;
+    --page-fork-divider-color: var(--color-gray-2);
+    --page-fork-divider-style: dashed;
+    --page-fork-divider-size: 1px;
+    --page-link-background-color: inherit;
+    --page-link-color: green;
+    --page-link-text-decoration-color: #0000ff;
+    --page-link-font-family: inherit;
+    --page-link-font-size: inherit;
+    --page-link-font-style: inherit;
+    --page-link-font-variant: inherit;
+    --page-link-font-weight: inherit;
+    --page-link-text-decoration: underline;
+    --page-link-text-transform: inherit;
+    --page-link-active-background-color: inherit;
+    --page-link-active-color: var(--color-indigo-4);
+    --page-current-passage-justify-content: center;
+    --page-header-border: 1px solid var(--color-gray-6);
+    --page-header-box-shadow: none;
+    --page-header-font-family: inherit;
+Mostrar todas as propriedades ( 52 mais)
+}
+* {
+    box-sizing: border-box;
+}
+Atributo style {
+    --page-transition-duration: 0.3s;
+}
+:root {
+    --color-gray-1: #f6f6f6;
+    --color-gray-2: #e2e2e2;
+    --color-gray-3: #8b8b8b;
+    --color-gray-4: #6f6f6f;
+    --color-gray-5: #3e3e3e;
+    --color-gray-6: #222222;
+    --color-rose-1: #fff7f9;
+    --color-rose-2: #ffdce5;
+    --color-rose-3: #ff3b8d;
+    --color-rose-4: #db0072;
+    --color-rose-5: #800040;
+    --color-rose-6: #4c0023;
+    --color-raspberry-1: #fff8f8;
+    --color-raspberry-2: #ffdddf;
+    --color-raspberry-3: #ff426c;
+    --color-raspberry-4: #de0051;
+    --color-raspberry-5: #82002c;
+    --color-raspberry-6: #510018;
+    --color-red-1: #fff8f6;
+    --color-red-2: #ffddd8;
+    --color-red-3: #ff4647;
+    --color-red-4: #e0002b;
+    --color-red-5: #830014;
+    --color-red-6: #530003;
+    --color-orange-1: #fff8f5;
+    --color-orange-2: #ffded1;
+    --color-orange-3: #fd4d00;
+    --color-orange-4: #cd3c00;
+    --color-orange-5: #752100;
+    --color-orange-6: #401600;
+    --color-cinnamon-1: #fff8f3;
+    --color-cinnamon-2: #ffdfc6;
+    --color-cinnamon-3: #d57300;
+    --color-cinnamon-4: #ac5c00;
+    --color-cinnamon-5: #633300;
+    --color-cinnamon-6: #371d00;
+    --color-amber-1: #fff8ef;
+    --color-amber-2: #ffe0b2;
+    --color-amber-3: #b98300;
+    --color-amber-4: #926700;
+    --color-amber-5: #523800;
+    --color-amber-6: #302100;
+    --color-yellow-1: #fff9e5;
+    --color-yellow-2: #ffe53e;
+    --color-yellow-3: #9c8b00;
+    --color-yellow-4: #7d6f00;
+    --color-yellow-5: #463d00;
+    --color-yellow-6: #292300;
+    --color-lime-1: #f7ffac;
+    --color-lime-2: #d5f200;
+Mostrar todas as propriedades ( 100 mais)
+}
+:root {
+    --oc-white: #ffffff;
+    --oc-white-rgb: 255, 255, 255;
+    --oc-black: #000000;
+    --oc-black-rgb: 0, 0, 0;
+    --oc-gray-0: #f8f9fa;
+    --oc-gray-0-rgb: 248, 249, 250;
+    --oc-gray-1: #f1f3f5;
+    --oc-gray-1-rgb: 241, 243, 245;
+    --oc-gray-2: #e9ecef;
+    --oc-gray-2-rgb: 233, 236, 239;
+    --oc-gray-3: #dee2e6;
+    --oc-gray-3-rgb: 222, 226, 230;
+    --oc-gray-4: #ced4da;
+    --oc-gray-4-rgb: 206, 212, 218;
+    --oc-gray-5: #adb5bd;
+    --oc-gray-5-rgb: 173, 181, 189;
+    --oc-gray-6: #868e96;
+    --oc-gray-6-rgb: 134, 142, 150;
+    --oc-gray-7: #495057;
+    --oc-gray-7-rgb: 73, 80, 87;
+    --oc-gray-8: #343a40;
+    --oc-gray-8-rgb: 52, 58, 64;
+    --oc-gray-9: #212529;
+    --oc-gray-9-rgb: 33, 37, 41;
+    --oc-red-0: #fff5f5;
+    --oc-red-0-rgb: 255, 245, 245;
+    --oc-red-1: #ffe3e3;
+    --oc-red-1-rgb: 255, 227, 227;
+    --oc-red-2: #ffc9c9;
+    --oc-red-2-rgb: 255, 201, 201;
+    --oc-red-3: #ffa8a8;
+    --oc-red-3-rgb: 255, 168, 168;
+    --oc-red-4: #ff8787;
+    --oc-red-4-rgb: 255, 135, 135;
+    --oc-red-5: #ff6b6b;
+    --oc-red-5-rgb: 255, 107, 107;
+    --oc-red-6: #fa5252;
+    --oc-red-6-rgb: 250, 82, 82;
+    --oc-red-7: #f03e3e;
+    --oc-red-7-rgb: 240, 62, 62;
+    --oc-red-8: #e03131;
+    --oc-red-8-rgb: 224, 49, 49;
+    --oc-red-9: #c92a2a;
+    --oc-red-9-rgb: 201, 42, 42;
+    --oc-pink-0: #fff0f6;
+    --oc-pink-0-rgb: 255, 240, 246;
+    --oc-pink-1: #ffdeeb;
+    --oc-pink-1-rgb: 255, 222, 235;
+    --oc-pink-2: #fcc2d7;
+    --oc-pink-2-rgb: 252, 194, 215;
+Mostrar todas as propriedades ( 214 mais)
+}
+:root {
+    --font-monospace: ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace;
+    --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+}
